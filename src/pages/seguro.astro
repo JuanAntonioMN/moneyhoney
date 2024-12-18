@@ -1,0 +1,331 @@
+---
+import PaginacionLayout from "../layouts/PaginacionLayout.astro";
+
+import { useState } from 'react';
+
+---
+
+<PaginacionLayout title="Seguro de vida">
+
+    <div class="w-full mt-10 sm:px-5">
+        <h1 class="text-[2rem] font-italiana lg:text-left text-center">Seguro de vida</h1>
+    </div>
+    
+
+    <div class="flex lg:flex-row flex-col w-full  justify-around ">
+        <div class="lg:w-1/2 w-full px-5 sm:order-1 order-2 flex flex-col py-10 gap-12">
+            <h2 class="text-[1.3rem] font-medium font-opensans">¿Por qué contratar un seguro de vida?</h2>
+            <div class="flex w-full items-center gap-2">
+                 <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-[#8C52FF] rounded-full flex justify-center items-center text-white text-[1.2rem]">1</div>
+                 <p class="font-opensans text-[1.1rem] w-full">Brinda tranquilidad al asegurado y a su familia.</p>
+            </div>
+
+            <div class="flex w-full items-center gap-2">
+                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-[#8C52FF] rounded-full flex justify-center items-center text-white text-[1.2rem]">2</div>
+                <p class="font-opensans text-[1.1rem] w-full">Mantiene la calidad de vida de la familia del asegurado si éste fallece o se invalida.</p>
+           </div>
+
+           <div class="flex w-full items-center gap-2">
+                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-[#8C52FF] rounded-full flex justify-center items-center text-white text-[1.2rem]">3</div>
+                <p class="font-opensans text-[1.1rem] w-full">En caso de que el asegurado sufra un accidente que lo deje con invalidez total y permanente y no pueda seguir trabajando.</p>
+           </div>
+
+           <div class="flex w-full items-center gap-2">
+                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-[#8C52FF] rounded-full flex justify-center items-center text-white text-[1.2rem]">4</div>
+                <p class="font-opensans text-[1.1rem] w-full">En ambientes de vulnerabilidad, se crea una necesidad de proteger a la familia, garantizando la estabilidad económica de los beneficiarios.</p>
+            </div>
+          
+        
+        </div>
+       <img class="sm:order-2" src="/public/imagenes/seguro_vida.svg" alt="proteger">
+    </div>
+
+
+
+
+    <div class="w-full mt-10 p-5">
+        <h2 class="text-[1.5rem] sm:text-[1.8rem] font-opensans text-left">Esquema de paquetes </h2>
+    </div>
+
+    <div class="max-w-4xl w-full mx-auto aspect-[16/9] relative px-5">
+
+    
+        <div class="grid grid-cols-5 lg:gap-4 gap-2 grid-rows-7 text-white text-center font-opensans lg:text-[.9rem] text-[0.7rem]">
+          <div class="bg-[#8C52FF] flex items-center justify-center ">Clásico</div>
+          <div class="bg-black flex items-center justify-center">Amplio</div>
+          <div class="bg-[#8C52FF] flex items-center justify-center">Máster</div>
+          <div class="bg-black flex items-center justify-center ">Premium</div>
+  
+          <div ></div>
+  
+          <div class="bg-[#D7B9FF] col-span-4 text-black flex items-center justify-center">Básica por fallecimiento</div>
+  
+         
+  
+          
+          
+          <div class="bg-[#D7B9FF] col-span-4 text-black flex items-center justify-center">Asistencias de protección</div>
+  
+          <div class="flex items-center">
+              <button class="bg-[#D7B9FF] w-8 h-8 text-white rounded-full flex items-center justify-center text-[1-2rem]" id="proteccion">
+                  +
+                </button>
+          </div>
+  
+         
+          <div id="miElemento1" style="visibility:hidden;" class="flex flex-col font-opensans text-[#8C52FF] text-sm w-1/2  rounded absolute top-0 left-0 lg:-top-10 lg:-right-44 z-10 bg-white p-5 shadow">
+              <span class="font-semibold text-center">Asistencias Protección</span>
+              <hr class="bg-[#8C52FF] w-full h-[2px]">
+              <p class="text-left">Son asistencias que ayudarán a los beneficiarios a hacer frente al fallecimiento del asegurado. Para solicitarlos se debe llamar al  Call center 55 5377 3961 en Ciudad de México y 800 400 8404 para el resto de la República.</p>
+          </div>
+        
+          <div class=" row-span-3  ">
+              <img src="public/imagenes/familia.png" alt="familia">
+  
+  
+          </div>
+  
+          <div class="bg-[#8C52FF] flex items-center justify-center ">Muerte accidental</div>
+          <div class="bg-[#8C52FF] "> Invalidez total y permanente</div>
+  
+          <div class="bg-[#8C52FF] flex items-center justify-center">Muerte accidental y pérdidas </div>
+          <div class="flex items-center">
+              <button class="bg-black w-8 h-8 text-white rounded-full flex items-center justify-center text-[1-2rem]" id="asistencia" >
+                  +
+                </button>
+          </div>
+  
+          <div id="miElemento2" style="visibility:hidden;" class="flex flex-col font-opensans text-[#8C52FF] text-sm w-1/2  rounded absolute top-0 left-0 lg:top-16 lg:-right-44 z-10 bg-white p-5 shadow">
+              <span class="font-semibold text-center">Muerte accidental y Pérdidas orgánicas</span>
+              <hr class="bg-[#8C52FF] w-full h-[2px]">
+              <p class="text-left">La misma cobertura que ya conocíamos Muerte Accidental y  Pérdidas orgánicas</p>
+          </div>
+        
+  
+  
+          <div class=" "></div>
+  
+          <div class="bg-[#8C52FF] flex items-center justify-center">Enfermedades
+              graves</div>
+          <div class="bg-[#8C52FF] flex items-center justify-center"> Invalidez total
+              y permanente</div>
+          <div class="flex items-center">
+              <button class="bg-[#D7B9FF] w-8 h-8 text-white rounded-full flex items-center justify-center text-[1-2rem]" id="muerte">
+                  +
+                </button>
+          </div>
+  
+          <div id="miElemento3" style="visibility:hidden;" class="flex flex-col font-opensans text-[#8C52FF] text-sm w-1/2  rounded absolute top-0 left-0 lg:top-32 lg:-right-44 z-10 bg-white p-8 shadow">
+              <span class="font-semibold text-center">Invalidez total y permanente</span>
+              <hr class="bg-[#8C52FF] w-full h-[2px]">
+              <p class="text-left">Se incluye con  la cobertura Exención de pago de primas</p>
+          </div>
+  
+          
+         
+  
+          <div></div>
+          <div></div>
+          <div class="bg-[#8C52FF] flex items-center justify-center">Enfermedades 
+              graves</div>
+          <div class="flex items-center">
+              <button class="bg-[#D7B9FF] w-8 h-8 text-white rounded-full flex items-center justify-center text-[1-2rem]" id="enfermedad">
+                  +
+                </button>
+          </div>
+  
+          <div id="miElemento4" style="visibility:hidden;" class="flex flex-col font-opensans text-[#8C52FF] text-sm w-1/2  rounded absolute top-0 left-0 lg:top-32 lg:-right-44 z-10 bg-white p-7 shadow">
+              <span class="font-semibold text-center">Enfermedades graves</span>
+              <hr class="bg-[#8C52FF] w-full h-[2px]">
+              <p class="text-left">Si durante la vigencia de la póliza al Asegurado se le diagnostica una de las enfermedades graves cubiertas, se cubre con una suma asegurada indemnizatoria única, la cual aparece en la carátula de la póliza (se cancela a los 60 años).</p>
+          </div>
+          
+         
+          <div class="col-span-4 bg-black flex items-center justify-center">Devolución del pago de primas (opcional)</div>
+  
+          <div class="flex items-center" >
+              <button class="bg-[#8C52FF] w-8 h-8 text-white rounded-full flex items-center justify-center text-[1-2rem]" id="devolucion" >
+                  +
+                </button>
+  
+            
+  
+                
+          </div>
+  
+          <div id="miElemento5" style="visibility:hidden;" class="flex flex-col font-opensans text-[#8C52FF] text-sm w-1/2  rounded absolute top-0 left-0 lg:top-32 lg:-right-44 z-10 bg-white p-5 shadow">
+              <span class="font-semibold text-center">Devolución del pago de primas</span>
+              <hr class="bg-[#8C52FF] w-full h-[2px]">
+              <p class="text-left">COBERTURA OPCIONAL, disponible para T10, T20 y T25, para todos los paquetes
+  
+                  Si el asegurado sobrevive al fin del Seguro Temporal contratado, cumpliendo con el pago de las primas y no se le decreta un estado de Invalidez Total y Permanente o una Enfermedad Grave cubierta, se pagará la SA que se estipula en la Caratula de la Póliza y que equivaldrá a un porcentaje de las primas pagadas durante la vigencia del seguro (10 años 50%, 20 años o más 100%).</p>
+           </div>
+  
+        </div>
+      </div>
+
+
+
+
+
+
+    <div class="w-full mt-10 p-5">
+        <p class="text-[1.2rem] lg:text-[1.2rem] font-opensans text-left ">Un seguro de vida en un esquema de paquetes a elegir, de acuerdo con su edad </p>
+    </div>
+
+    <div class="max-w-4xl w-full mx-auto aspect-auto">
+        <div class="grid grid-cols-6  lg:gap-4 gap-2 grid-rows-2 font-opensans lg:text-[0.9rem] text-[0.7rem] ">
+            <div class="bg-[#8C52FF] flex items-center justify-center col-span-3  text-white lg:py-4">De 18 años a 55 años</div>
+            <div class="bg-[#D7B9FF] flex items-center justify-center col-span-2 ">De 56 años a 65 años</div>
+            <div class="bg-black flex items-center text-white text-center">De 66 años a 70 años</div>
+    
+            <div class="bg-[#D7B9FF] flex items-center justify-center lg:py-4">Clásico</div>
+            <div class="bg-[#8C52FF] flex items-center justify-center lg:py-4">Máster</div>
+            <div class="bg-black flex items-center justify-center text-white lg:py-4">Premium</div>
+            <div class="bg-[#D7B9FF] flex items-center justify-center lg:py-4">Amplio</div>
+            <div class="bg-black flex items-center justify-center text-white lg:py-4">Clásico</div>
+            <div class="bg-[#D7B9FF] flex items-center justify-center lg:py-4">Clásico</div>
+          
+        </div>
+    </div>
+
+
+
+
+    <a href="/agendar" class="w-full flex justify-center mt-10 py-10">
+        <button class="bg-[#8C52FF] w-2/3 sm:w-1/4 sm:h-[5rem] h-[5rem] text-white font-medium text-[2rem] rounded-[0.5rem] sm:rounded-[1rem]  hover:bg-[#D7B9FF] shadow-purple-glow font-opensans">
+            Solicitar Asesoría
+        </button>
+    </a>
+   
+    <div class="w-full mt-10 p-5 flex justify-center items-center flex-col">
+        <span class="text-center font-opensans font-bold text-[1rem]">Descargue información adicional </span>
+       
+        <a href="https://ejemplo.com/archivo.pdf" download="mi-pdf.pdf" class="text-3xl">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+    </div>
+
+
+    <div class="w-full mt-10 p-5">
+        <h3 class="text-[1.5rem] sm:text-[2rem] font-opensans sm:text-left font-bold text-center">PREGUNTAS FRECUENTES</h3>
+    </div>
+
+    <div class="w-full p-5 font-opensans">
+        <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Cuál es la edad mínima para contratar una póliza?
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+          <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Cuál es la edad máxima para asegurarse?
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+          <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Hay suscripción médica?
+
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+          <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Puedo contratar una póliza para un familiar?
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+          <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Los pagos por prima son deducibles?
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+          <details class="p-4 border  bg-[#D7B9FF] group">
+            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
+                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
+                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
+                ¿Existen descuentos en la prima?
+            </summary>
+            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+          </details>
+
+
+          
+    </div>
+
+
+    
+    
+  
+
+</PaginacionLayout>
+
+
+
+<script>
+     document.getElementById('proteccion').addEventListener('click', function() {
+        var element = document.getElementById('miElemento1');
+        if (element!.style.visibility === "hidden") {
+            element!.style.visibility = "visible";  // Mostrar el elemento
+        } else {
+            element!.style.visibility = "hidden";   // Ocultar el elemento
+        }
+    });
+
+    document.getElementById('asistencia').addEventListener('click', function() {
+        var element = document.getElementById('miElemento2');
+        if (element!.style.visibility === "hidden") {
+            element!.style.visibility = "visible";  // Mostrar el elemento
+        } else {
+            element!.style.visibility = "hidden";   // Ocultar el elemento
+        }
+    });
+
+    document.getElementById('muerte').addEventListener('click', function() {
+        var element = document.getElementById('miElemento3');
+        if (element!.style.visibility === "hidden") {
+            element!.style.visibility = "visible";  // Mostrar el elemento
+        } else {
+            element!.style.visibility = "hidden";   // Ocultar el elemento
+        }
+    });
+
+    document.getElementById('enfermedad').addEventListener('click', function() {
+        var element = document.getElementById('miElemento4');
+        if (element!.style.visibility === "hidden") {
+            element!.style.visibility = "visible";  // Mostrar el elemento
+        } else {
+            element!.style.visibility = "hidden";   // Ocultar el elemento
+        }
+    });
+
+    document.getElementById('devolucion').addEventListener('click', function() {
+        var element = document.getElementById('miElemento5');
+        if (element!.style.visibility === "hidden") {
+            element!.style.visibility = "visible";  // Mostrar el elemento
+        } else {
+            element!.style.visibility = "hidden";   // Ocultar el elemento
+        }
+    });
+
+   
+
+</script>

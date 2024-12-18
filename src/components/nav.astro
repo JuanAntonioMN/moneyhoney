@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="flex justify-between sm:flex-row items-center   w-full px-2">
+  <a href="/">
+  <div class="text-[2rem] text-center font-italiana">moneyhoney</div>
+</a>
+  <ul class="hidden md:flex space-x-6 font-opensans text-[1rem]">
+    <li><a href="/" class="font-opensans">INICIO</a></li>
+    <li><a href="/servicios" class="font-opensans">SERVICIOS</a></li>
+    <li><a href="/ebook" class="font-opensans">EBOOKS</a></li>
+    <div class={`${currentPath === '/ebook' ? 'block ' : 'hidden'} `}>
+      <button class={`${currentPath === '/ebook' ? 'block' : 'hidden'} w-full  text-black text-[1.2rem]`}>
+        <i class="fa-solid fa-cart-shopping mx-2"></i>
+      </button>
+    </div>
+  </ul>
+  
+  
+  
+  
+  <button class="md:hidden mx-2 text-[1.5rem] transform transition-all duration-500 hover:scale-105" id="menu-toggle">
+    <i class="fa-solid fa-bars" id="icono"></i>
+  </button>
+
+</nav>
+
+
+
+
+
+  <!-- Menú desplegable en dispositivos pequeños -->
+  <ul class="hidden   color p-4 md:hidden  h-screen  w-full " id="mobile-menu">
+      
+      <div class="flex justify-center items-center flex-col h-screen space-y-10 text-[1.5rem] font-opensans ">
+          <li><a	href="/" >INICIO</a></li>
+          <li><a href="/servicios">SERVICIOS</a></li>
+          <li><a href="/ebook">EBOOK</a></li>
+          
+          <div class={`${currentPath === '/ebook' ? 'block ' : 'hidden'} `}>
+            <button class={`${currentPath === '/ebook' ? 'block' : 'hidden'} w-full  text-black text-[1.2rem]`}>
+              <i class="fa-solid fa-cart-shopping mx-2"></i>
+            </button>
+          </div>
+      </div>
+  </ul>
+
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+	
+	const mobileMenu = document.getElementById("mobile-menu");
+	const i=document.getElementById("icono");
+
+	menuToggle.addEventListener("click", () => {
+		mobileMenu.classList.toggle("hidden");
+		
+	if (icono.classList.contains("fa-bars")) {
+      icono.classList.replace("fa-bars", "fa-xmark");
+    } else {
+      icono.classList.replace("fa-xmark", "fa-bars");
+    }
+		
+		
+	});
+
+</script>
