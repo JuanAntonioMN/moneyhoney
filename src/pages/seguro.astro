@@ -281,16 +281,21 @@ import { useState } from 'react';
 
 
 <script>
-     document.getElementById('proteccion').addEventListener('click', function() {
-        var element = document.getElementById('miElemento1');
-        if (element!.style.visibility === "hidden") {
-            element!.style.visibility = "visible";  // Mostrar el elemento
+   document.getElementById('proteccion')!.addEventListener('click', function () {
+    var element = document.getElementById('miElemento1');
+    if (element) { // Verifica que el elemento exista
+        if (element.style.visibility === "hidden") {
+            element.style.visibility = "visible"; // Mostrar el elemento
         } else {
-            element!.style.visibility = "hidden";   // Ocultar el elemento
+            element.style.visibility = "hidden"; // Ocultar el elemento
         }
-    });
+    } else {
+        console.error("El elemento 'miElemento1' no existe en el DOM.");
+    }
+});
 
-    document.getElementById('asistencia').addEventListener('click', function() {
+
+    document.getElementById('asistencia')!.addEventListener('click', function() {
         var element = document.getElementById('miElemento2');
         if (element!.style.visibility === "hidden") {
             element!.style.visibility = "visible";  // Mostrar el elemento
@@ -299,7 +304,7 @@ import { useState } from 'react';
         }
     });
 
-    document.getElementById('muerte').addEventListener('click', function() {
+    document.getElementById('muerte')!.addEventListener('click', function() {
         var element = document.getElementById('miElemento3');
         if (element!.style.visibility === "hidden") {
             element!.style.visibility = "visible";  // Mostrar el elemento
@@ -308,7 +313,7 @@ import { useState } from 'react';
         }
     });
 
-    document.getElementById('enfermedad').addEventListener('click', function() {
+    document.getElementById('enfermedad')!.addEventListener('click', function() {
         var element = document.getElementById('miElemento4');
         if (element!.style.visibility === "hidden") {
             element!.style.visibility = "visible";  // Mostrar el elemento
@@ -317,7 +322,7 @@ import { useState } from 'react';
         }
     });
 
-    document.getElementById('devolucion').addEventListener('click', function() {
+    document.getElementById('devolucion')!.addEventListener('click', function() {
         var element = document.getElementById('miElemento5');
         if (element!.style.visibility === "hidden") {
             element!.style.visibility = "visible";  // Mostrar el elemento
