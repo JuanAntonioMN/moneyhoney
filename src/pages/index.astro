@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import 'aos/dist/aos.css';
+
 
 const today = new Date();
 const mes = today.toLocaleString('default', { month: 'long' }); // Mes en formato largo (e.g., January)
@@ -55,7 +55,7 @@ const anio = today.getFullYear(); // Año
 
 	<hr class="bg-black h-[.4rem] m-10 rounded-[10rem]"> 
 
- 	<div class="w-full h-45  flex flex-col  items-center my-5  "data-aos="fade-up">
+ 	<div class="w-full h-45  flex flex-col  items-center my-5  ">
 		<h2 class="text-center  text-[1.5rem] font-opensans">“PAY THE PRICE TODAY SO YOU CAN PAY ANY PRICE TOMORROW.”</h2>
 		<h1 class="text-center my-[1rem] text-[3rem] sm:text-[4rem] font-italiana">Carolina Ruvalcaba</h1>
 		<h3 class=" text-center text-[2rem] font-opensans">Agente de Seguros</h3>
