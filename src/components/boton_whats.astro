@@ -1,28 +1,30 @@
 
+<script>
+  // script.js
+document.addEventListener('DOMContentLoaded', function () {
+const botonWhatsApp = document.getElementById('botonWhatsApp');
+let isScrolling;
+
+window!.addEventListener('scroll', function () {
+  // Muestra el botón al iniciar el scroll
+  botonWhatsApp!.classList.remove('hidden');
+
+  // Borra el temporizador previo
+  window.clearTimeout(isScrolling!);
+
+  // Establece un nuevo temporizador para ocultar el botón después de 2 segundos de inactividad
+  isScrolling = setTimeout(function() {
+    botonWhatsApp!.classList.add('hidden');
+  }, 2000);
+});
+});
+
+</script>
+
+
 <a href="https://wa.me/5214771917386?text=Hola,%20me%20gustaría%20recibir%20más%20información" target="_blank" class="w-full">
 
 <button id="botonWhatsApp" class="hidden fixed bottom-5 right-5 bg-green-500 text-white p-3 rounded-full w-20 h-20 flex justify-center items-center text-5xl shadow shadow-black">
     <i class="fa-brands fa-whatsapp"></i>
   </button>
 </a>
-  <script>
-    // script.js
-document.addEventListener('DOMContentLoaded', function () {
-  const botonWhatsApp = document.getElementById('botonWhatsApp');
-  let isScrolling;
-
-  window!.addEventListener('scroll', function () {
-    // Muestra el botón al iniciar el scroll
-    botonWhatsApp!.classList.remove('hidden');
-
-    // Borra el temporizador previo
-    window.clearTimeout(isScrolling!);
-
-    // Establece un nuevo temporizador para ocultar el botón después de 2 segundos de inactividad
-    isScrolling = setTimeout(function() {
-      botonWhatsApp!.classList.add('hidden');
-    }, 2000);
-  });
-});
-
-  </script>
