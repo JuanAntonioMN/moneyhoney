@@ -7,6 +7,33 @@ const mes = today.toLocaleString('default', { month: 'long' }); // Mes en format
 const anio = today.getFullYear(); // Año
 ---
 
+<script>
+
+
+
+	const menuToggle = document.getElementById("menu-toggle");
+	
+	const mobileMenu = document.getElementById("mobile-menu");
+	const icono=document.getElementById("icono");
+
+	menuToggle!.addEventListener("click", () => {
+		mobileMenu!.classList.toggle("hidden");
+		
+	if (icono!.classList.contains("fa-bars")) {
+      icono!.classList.replace("fa-bars", "fa-xmark");
+    } else {
+      icono!.classList.replace("fa-xmark", "fa-bars");
+    }
+		
+		
+	});
+
+	
+
+	
+		
+  </script>
+
 <Layout title="Inicio">
 	<div class=" text-white portada bg-white  w-full h-screen flex flex-col  sm:justify-between ">
 		
@@ -219,32 +246,7 @@ const anio = today.getFullYear(); // Año
 	
 
 </Layout>
-<script>
 
-
-
-	const menuToggle = document.getElementById("menu-toggle");
-	
-	const mobileMenu = document.getElementById("mobile-menu");
-	const icono=document.getElementById("icono");
-
-	menuToggle!.addEventListener("click", () => {
-		mobileMenu!.classList.toggle("hidden");
-		
-	if (icono!.classList.contains("fa-bars")) {
-      icono!.classList.replace("fa-bars", "fa-xmark");
-    } else {
-      icono!.classList.replace("fa-xmark", "fa-bars");
-    }
-		
-		
-	});
-
-	
-
-	
-		
-  </script>
 
 
 <style>
