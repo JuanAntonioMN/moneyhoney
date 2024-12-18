@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('scroll', function () {
     // Muestra el botón al iniciar el scroll
-    botonWhatsApp.classList.remove('hidden');
+    botonWhatsApp!.classList.remove('hidden');
 
     // Borra el temporizador previo
-    window.clearTimeout(isScrolling);
+    window.clearTimeout(isScrolling!);
 
     // Establece un nuevo temporizador para ocultar el botón después de 2 segundos de inactividad
     isScrolling = setTimeout(function() {
-      botonWhatsApp.classList.add('hidden');
+      botonWhatsApp!.classList.add('hidden');
     }, 2000);
   });
 });
