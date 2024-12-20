@@ -276,61 +276,75 @@ import { useState } from 'react';
     </div>
 
     <div class="w-full p-5 font-opensans">
-        <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Cuál es la edad mínima para contratar una póliza?
+        <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Cuál es la edad mínima para contratar una póliza?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              La edad mínima para contratar una póliza es de 18 años.
+            </p>
           </details>
-
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Cuál es la edad máxima para asegurarse?
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Cuál es la edad máxima para asegurarse?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              La edad máxima para asegurarse es de 70 años. Sin embargo, si contratas T1, puedes renovar hasta los 99 años.
+            </p>
           </details>
-
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Hay suscripción médica?
-
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Puedo contratar una póliza para un familiar?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              Sí, puedes contratar una póliza para un familiar, siempre que se aplique el interés asegurable.
+            </p>
           </details>
-
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Puedo contratar una póliza para un familiar?
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Hay cargos por cancelar una póliza?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              No hay cargos por cancelar una póliza. Además, puedes elegir entre valores de rescate, seguro saldado o seguro prorrogado, siempre que tengas al menos 3 años continuos con la póliza.
+            </p>
           </details>
-
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Los pagos por prima son deducibles?
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Se puede cambiar la Suma Asegurada?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              Sí, puedes cambiar la Suma Asegurada en la fecha de renovación de la póliza, siempre que el cúmulo de SA lo permita y completes el cuestionario médico.
+            </p>
           </details>
-
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Existen descuentos en la prima?
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Qué diferencia hay con un seguro de Hombre clave?
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+              En un seguro de Hombre clave, el contratante y el beneficiario es la misma persona (la persona moral). En un seguro de vida normal, el beneficiario es designado por el asegurado.
+            </p>
           </details>
+          
+       
 
+         
 
           
     </div>

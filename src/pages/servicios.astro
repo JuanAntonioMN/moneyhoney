@@ -22,9 +22,9 @@ import PaginacionLayout from "../layouts/PaginacionLayout.astro";
         <h2 class="text-[1.5rem] sm:text-[2rem] font-opensans text-center sm:text-left font-bold">PLAN SEGURO DE VIDA</h2>
     </div>
 
-    <div class="w-full flex sm:flex-row flex-col gap-5 p-5">
+    <div class="w-full flex gap-2 p-5 lg:overflow-hidden overflow-x-scroll scroll-smooth scrollbar-hide ">
 
-        <div class="bg-[#8C52FF] w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around">
+        <div class="bg-[#8C52FF] flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around">
 
             <div class="font-opensans text-white text-[1.5rem] font-bold  w-full flex ">
                 <span >Enfermedades Graves (Tiempos de espera)</span>
@@ -60,7 +60,7 @@ import PaginacionLayout from "../layouts/PaginacionLayout.astro";
       
 
 
-        <div class="bg-black w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-between ">
+        <div class="bg-black flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-between ">
             <div class="font-opensans text-white text-[1.5rem] font-bold  w-full flex  justify-between ">
                 <span >Basica por fallecimiento</span>
                 <i class="fa-solid fa-church"></i>
@@ -89,7 +89,7 @@ import PaginacionLayout from "../layouts/PaginacionLayout.astro";
 
 
 
-        <div class="bg-[#8C52FF] w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around">
+        <div class="bg-[#8C52FF] flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around">
             <div class="font-opensans text-white text-[1.5rem] font-bold  w-full flex  justify-between ">
                 <span >Asistencias</span>
                 <i class="fa-solid fa-users"></i>
@@ -128,45 +128,89 @@ import PaginacionLayout from "../layouts/PaginacionLayout.astro";
     </div>
 
     <div class="w-full px-5 font-opensans">
-        <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1.3rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Qué es un plan de ahorro para el retiro (PPR)?
-            </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
-          </details>
+       
 
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1.3rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Por qué debería considerar un PPR?
-            </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
-          </details>
+         
 
-          <details class="p-4 border  bg-[#D7B9FF] group">
-            <summary class="cursor-pointer text-[1.3rem] text-black flex items-center ">
-                <i class="fa-solid fa-plus group-open:hidden mr-2"></i>
-                <i class="fa-solid fa-minus hidden group-open:inline mr-2"></i>
-                ¿Cuándo debo comenzar a invertir en un PPR?
-
+        <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black lg:font-light flex items-center justify-between p-5 font-opensans">
+              ¿Qué es un plan de ahorro para el retiro (PPR)?
+          
+              <!-- Ícono cuando está cerrado -->
+              <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
             </summary>
-            <p class="mt-2 text-black">Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.</p>
-          </details>
-
-          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded p-2">
-            <summary class="cursor-pointer text-[1.3rem] text-black flex items-center justify-between">
-              ¿Cuándo debo invertir en mi PPR?
-              <i class="fa-solid fa-chevron-down group-open:hidden mr-2 transition-transform duration-300 ease-in-out"></i>
-              <i class="fa-solid fa-chevron-up hidden group-open:inline mr-2 transition-transform duration-300 ease-in-out"></i>
-            </summary>
-            <p class="mt-2 text-black text-[1rem] overflow-hidden h-0 group-open:h-[5rem] transition-all duration-300 ease-in-out">
+            <p class="mt-2 text-black text-[1rem] overflow-hidden group-open transition-transform duration-700 ease-in-out  p-5 bg-white font-opensans font-light text-justify">
               Un plan de ahorro para el retiro es un vehículo financiero diseñado para ayudarte a acumular fondos durante tu vida laboral para asegurar un flujo de ingresos durante tu jubilación.
             </p>
           </details>
           
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2 ">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black font-light flex items-center justify-between p-5 font-opensans">
+                ¿Por qué debería considera un PPR?
+
+                <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
+            </summary>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden  group-open transition-all duration-300 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+                Un PPR te permite construir un fondo de ahorro específico para tu retito, lo que puede ayudarte a mantener tu calidad de vida una vez que dejes de trabajar.
+            </p>
+          </details>
+
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2 ">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black font-light flex items-center justify-between p-5 font-opensans">
+                ¿Cuándo debo comenzar a invertir en un PPR?
+
+
+                <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
+            </summary>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden  group-open transition-all duration-300 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+                Lo antes posibles es lo mejor.
+                Empezar a invertir temprano te brinda la ventaja del interés compuesto, lo que puede aumentar significativamente tus ahorros a largo plazo.                
+            </p>
+          </details>
+
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2 ">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black font-light flex items-center justify-between p-5 font-opensans">
+                ¿Cuándo debo invertir en mi PPR?
+                <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
+            </summary>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden  group-open transition-all duration-300 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+                La cantidad que debes de invertir dependerá de tus objetivos de jubilación, tus ingresos actuales y tus gastos, Se recomienda invertir un porcentaje de tus ingresos, generalmente alrededor del 10-15 %
+            </p>
+          </details>
+          
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2 ">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black font-light flex items-center justify-between p-5 font-opensans">
+                ¿Cuáles son los beneficios discales de un PPR?
+
+
+
+                <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
+            </summary>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden  group-open transition-all duration-300 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+                El gobierno mexicano, con el deseo de incentivar el ahorro individual para el retiro, pone a disposición de personas físicas los siguientes beneficios fiscales: <br>
+                <b class="font-semibold">Deducibilidad:</b>
+                Disminuir la base gravable, reduciendo así el pago de impuestos.
+                <br>
+                <b class="font-semibold">Diferimiento:</b>
+                Posponer el pago del impuesto sobre los intereses reales hasta el momento en que estos se retiren.
+                <br>
+
+                <b class="font-semibold">Exención:</b>
+                Eliminación del pago del impuesto por cumplir ciertos requisitos (normalmente de edad y duración de la póliza).
+
+            </p>
+          </details>
+
+          <details class="border bg-[#D7B9FF] group transition duration-1000 ease-in-out rounded my-2 ">
+            <summary class="cursor-pointer text-[1.1rem] lg:text-[1.3rem] text-black font-light flex items-center justify-between p-5 font-opensans">
+                ¿Qué opciones de inversión tengo en un PPR?
+
+                <i class="fa-solid fa-chevron-down transform group-open:rotate-180 mr-2 transition-transform duration-300 ease-in-out"></i>
+            </summary>
+            <p class="mt-2 text-black text-[1rem] overflow-hidden  group-open transition-all duration-300 ease-in-out p-5 bg-white font-opensans font-light text-justify">
+                Hay hasta ahora 19 portafolios de inversión. La elección depende de tu tolerancia al riesgo y objetivo.
+            </p>
+          </details>
 
           
     </div>
