@@ -1,15 +1,25 @@
 
 ---
-import PaginacionLayout from "../layouts/PaginacionLayout.astro"
+import PaginacionLayout from "../layouts/PaginacionLayout.astro";
 ---
 
 <PaginacionLayout title="Agendar cita">
-    <div class="flex justify-center w-full h-screen items-center sm:p-10">
-        <iframe
-          src="https:calendly.com/moneyhoney"
-          class="rounded-md shadow-lg w-full h-screen"
-          allowfullscreen>
-        </iframe>
+    <div class="flex justify-center w-full h-screen items-center p-10">
+      <div id="calendly-scheduler" class="rounded-md shadow-lg w-full h-screen"></div>
       </div>
 </PaginacionLayout>
+
+
+<script
+  src="https://assets.calendly.com/assets/external/widget.js"
+  type="text/javascript"
+></script>
+<script type="text/javascript">
+  Calendly.initInlineWidget({
+    url: 'https:calendly.com/moneyhoney',
+    parentElement: document.getElementById('calendly-scheduler'),
+    prefill: {},
+    utm: {}
+  });
+</script>
 
