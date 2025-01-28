@@ -1,38 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Comentario from '../components/comentario.astro';
+import FormComentario from '../components/formComentario.astro';
+import {fetchComentarios} from '../script/fetchComentarios.js'
 
-
+const comentarios=await fetchComentarios();
 const today = new Date();
 const mes = today.toLocaleString('default', { month: 'long' }); // Mes en formato largo (e.g., January)
 const anio = today.getFullYear(); // Año
 ---
 
-<script>
 
-
-
-	const menuToggle = document.getElementById("menu-toggle");
-	
-	const mobileMenu = document.getElementById("mobile-menu");
-	const icono=document.getElementById("icono");
-
-	menuToggle!.addEventListener("click", () => {
-		mobileMenu!.classList.toggle("hidden");
-		
-	if (icono!.classList.contains("fa-bars")) {
-      icono!.classList.replace("fa-bars", "fa-xmark");
-    } else {
-      icono!.classList.replace("fa-xmark", "fa-bars");
-    }
-		
-		
-	});
-
-	
-
-	
-		
-  </script>
 
 <Layout title="Inicio">
 	<div class=" text-white portada bg-white  w-full h-screen flex flex-col  sm:justify-between ">
@@ -104,28 +82,10 @@ const anio = today.getFullYear(); // Año
 				
 		</div>
 
-		<img class=" sm:w-[40%] w-[15rem] p-2 sm:order-2 order-1" src="/imagenes/quien_soy.png" alt="error">
+		<img class=" sm:w-[40%] w-[15rem] p-2 sm:order-2 order-1" src="/imagenes/quien_soy.png" alt="asesora">
 		
 		
 	</div>
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<h4 class="text-[1.8rem] lg:text-[3.5rem] text-center font-italiana mt-20 " >VENTAJAS DE TENER UN ASESOR FINANCIERO</h4>
 
@@ -133,7 +93,7 @@ const anio = today.getFullYear(); // Año
 	
 
 		
-		<img class="sm:w-[40%] w-[15rem] flex " src="/imagenes/ventajas.png" alt="">
+		<img class="sm:w-[40%] w-[15rem] flex " src="/imagenes/ventajas.png" alt="ventajas">
 			
 
 		 <div class="w-full sm:w-1/2 flex  flex-col justify-center items-center gap-10  px-5 ">
@@ -199,55 +159,50 @@ const anio = today.getFullYear(); // Año
 		</p>
 	</div>
 
-	<h6 class="lg:text-[4rem] text-[2rem] text-center font-italiana">TESTIMONIOS</h6>
 
-	<div class="flex sm:flex-row flex-col w-max-full  m-5 sm:my-10 justify-center items-center gap-4  ">
 
-		<div class="bg-[#D7B9FF]  w-full sm:w-1/3 h-[10rem] sm:h-[12rem] rounded-[.5rem] border-[#8C52FF] border-[1px] transform transition-all duration-500 hover:scale-105">
-			<div class="flex m-2 gap-2 items-center justify-start">
-				<img class="sm:w-[4rem] w-[2rem] sm:h-[4rem] h-[2rem] rounded-full" src="imagenes/perfil.jpg" alt="">
-				<p class="text-[#8C52FF] font-medium text-left sm:text-[1.3rem] text-[1.2rem] font-opensans">Luisa Fernanda</p>
+	<section class="dark:bg-gray-100 ">
+		<div class="container px-6 py-12 mx-auto">
+		  <div class="grid items-center gap-4 xl:grid-cols-5">
+			<div class="max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
+			  <h5 class="text-5xl font-bold font-italiana dark:text-[#8C52FF]">Testimonios  de mis clientes</h5>
+			  <p class="font-opensans text-[#8C52FF]">
+				Estoy orgullosa de compartir las experiencias de quienes han confiado en mis servicios. Sus palabras son el reflejo de nuestro compromiso y dedicación.
+			  </p>
 			</div>
-
-			<div class="m-2">
-				<p class="text-white text-[1rem] font-normal text-left font-opensans">También es una gran plataforma para crear un marco, ya que proporciona un entorno de desarrollo conectable. La comunidad también es increíble.</p>
+			<div class="p-6 xl:col-span-3">
+			  <div class="grid gap-4 md:grid-cols-2">
+				<!-- Render dinámico de los comentarios -->
+				{comentarios.map((coment:any) => (
+				  <Comentario
+					nombre={coment.nombre}
+					comentario={coment.comentario}
+					img={coment.img}
+					red_social={coment.red_social}
+				  />
+				))}
+			  </div>
 			</div>
-
+		  </div>
 		</div>
+	  </section>
 
-		<div class="bg-[#D7B9FF]  w-full sm:w-1/3 h-[10rem] sm:h-[12rem] rounded-[.5rem] border-[#8C52FF] border-[1px]  transform transition-all duration-500 hover:scale-105">
-			<div class="flex m-2 gap-2 items-center justify-start">
-				<img class="sm:w-[4rem] w-[2rem] sm:h-[4rem] h-[2rem] rounded-full" src="imagenes/perfil.jpg" alt="">
-				<p class="text-[#8C52FF] font-medium text-left sm:text-[1.3rem] text-[1.2rem] font-opensans">Luisa Fernanda</p>
-			</div>
-
-			<div class="m-2">
-				<p class="text-white text-[1rem] font-normal text-left font-opensans">También es una gran plataforma para crear un marco, ya que proporciona un entorno de desarrollo conectable. La comunidad también es increíble.</p>
-			</div>
-
+		<div class="w-full p-0 lg:p-5 ">
+			<FormComentario/>
 		</div>
-
-		<div class="bg-[#D7B9FF]  w-full sm:w-1/3 h-[10rem] sm:h-[12rem] rounded-[.5rem] border-[#8C52FF] border-[1px]  transform transition-all duration-500 hover:scale-105">
-			<div class="flex m-2 gap-2 items-center justify-start">
-				<img class="sm:w-[4rem] w-[2rem] sm:h-[4rem] h-[2rem] rounded-full" src="imagenes/perfil.jpg" alt="">
-				<p class="text-[#8C52FF] font-medium text-left sm:text-[1.3rem] text-[1.2rem] font-opensans">Luisa Fernanda</p>
-			</div>
-
-			<div class="m-2">
-				<p class="text-white text-[1rem] font-normal text-left font-opensans">También es una gran plataforma para crear un marco, ya que proporciona un entorno de desarrollo conectable. La comunidad también es increíble.</p>
-			</div>
-
-		</div>
+	
+	
 		
-	</div>
-	
- 
- 
-	
+		  
+
 
 </Layout>
 
-
+<script>
+	import '../script/menuToggle.js'		
+</script>
+   
+   
 
 <style>
 	.portada{
@@ -270,4 +225,5 @@ const anio = today.getFullYear(); // Año
 }
 
 </style>
+
 

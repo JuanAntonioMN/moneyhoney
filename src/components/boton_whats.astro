@@ -1,23 +1,6 @@
 
 <script>
-  // script.js
-document.addEventListener('DOMContentLoaded', function () {
-const botonWhatsApp = document.getElementById('botonWhatsApp');
-let isScrolling;
-
-window!.addEventListener('scroll', function () {
-  // Muestra el botón al iniciar el scroll
-  botonWhatsApp!.classList.remove('hidden');
-
-  // Borra el temporizador previo
-  window.clearTimeout(isScrolling!);
-
-  // Establece un nuevo temporizador para ocultar el botón después de 2 segundos de inactividad
-  isScrolling = setTimeout(function() {
-    botonWhatsApp!.classList.add('hidden');
-  }, 2000);
-});
-});
+import '../script/menuToggle.js'
 
 </script>
 

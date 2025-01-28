@@ -1,0 +1,40 @@
+---
+
+const {id,nombre,img,comentario,estado,social}=Astro.props;
+const palabras = nombre.trim().split(/\s+/);
+const correccionNombre=palabras.slice(0,2)
+
+---
+
+  
+   <div class="w-full  sm:w-full md:w-full lg:w-[45%] grid grid-rows-4 h-auto   bg-white shadow-md rounded-lg">
+       <div class="w-full flex p-3 justify-between items-center">
+            <div class="w-full px-5 py-2  flex justify-end items-end">
+                <div class="w-full flex   flex-row gap-2   items-center">
+                    <img class="w-[2rem] h-[2rem] object-contain rounded-full" src={`http://localhost:3001/uploads/images/coments/${img}`} alt={nombre}>   
+                    <p class=" text-[.8rem] font-opensans">{correccionNombre.join(' ')}</p>
+
+                </div>
+            </div>
+           <a href={social} target="_blank" class="bg-[#8C52FF]  text-white rounded h-7 px-1  text-center">Follow</a>
+       </div>
+
+       <div class="w-full p-3 ">
+         <p class="text-justify text-base">{comentario}</p>
+       </div>
+      
+       <hr class="w-full  bg-gray-300">
+
+        <div class="w-full flex sm:flex-row flex-col justify-around items-center text-[1rem] gap-2 p-2 ">
+            <button id={`modificar-${id}`} class="w-full sm:w-3/4 p-2  bg-white border-[1px] text-[#8C52FF] border-[#8C52FF]  rounded-[1rem] hover:bg-black hover:border-none hover:text-white transition ease-in delay-75 duration-700">{estado ? 'RETIRAR' : 'APROBAR'}</button>
+            
+            <button id={`eliminar-${id}`} class="w-full sm:w-3/4 p-2  border-[1px] border-[#8C52FF] rounded-[1rem] bg-[#8C52FF] hover:bg-[#D7B9FF] text-white hover:text-[#8C52FF] transition ease-in delay-75 duration-700">ELIMINAR</button>
+        </div>
+   </div>
+      
+   <script>
+    import  '../script/eliminarComentario.js'
+    import '../script/aprobarComentarios.js'
+   </script>
+<div>
+   

@@ -1,0 +1,39 @@
+  
+---
+import PanelLayout from "../layouts/PanelLayout.astro";
+import Libro from "../components/libro.astro";
+import { fetchBooks } from '../script/fetchBooks.js'; 
+const libros = await fetchBooks();  // Obtener los libros desde la API
+---
+<PanelLayout title="Perfil">
+
+  <div class="w-full p-8">
+    <div class="w-full flex lg:justify-end md:justify-center justify-center ">
+      <a href="registrarLibro" class="w-2/3 md:w-2/3  lg:w-1/4  shadow-md p-2 rounded-lg text-center font-opensans text-white bg-[#8C52FF] sm:text-[1rem]  text-xl" id="openModal" ><i class="fa-solid fa-plus"></i> Agregar libro</a>
+     </div>
+     
+     <div class="flex flex-col gap-10 my-10">
+     
+       {libros.map((libro:any) => (
+         
+         <Libro 
+           id={libro.id}
+           nombre={libro.nombre} 
+           descripcion={libro.descripcion} 
+           precio={libro.precio} 
+           imagen_url={libro.imagen_url} 
+           estado={libro.es_gratis}
+           cupon={libro.cupon}
+           
+         />
+       ))}
+    
+      </div>
+
+  </div>
+
+  
+  <script>
+    import '../script/protected.js'
+  </script>
+</PanelLayout>

@@ -1,0 +1,57 @@
+---
+import FormLibrosUser from "../components/formLibrosUser.astro";
+import FormCupon from "../components/formCupon.astro";
+import Cesta from "../components/cesta.astro";
+const {id, nombre, reseña, precio, imagen_url,estado } = Astro.props;
+const libroId =id; // Generar un id único para cada libro
+let nuevoPrecio=estado? "Gratis" : "$"+ precio;
+
+---
+
+<div id={`id-${libroId}`} data-id={estado} class="flex w-full lg:flex-row md:flex-col flex-col justify-center py-5  lg:p-5 shadow-sm gap-5">
+
+  <div class=" w-full sm:w-full md:w-full lg:w-1/3 xl:w-1/3 2xl:w-1/3  flex flex-col justify-center items-center   lg:px-10 ">
+    <img
+      id={`imagen-${libroId}`}
+      class="w-full md:w-1/2 lg:w-full xl:w-2/3 sm:w-full"
+      src={`http://localhost:3001/uploads/images/books/${imagen_url}`}
+      alt={nombre}
+    />
+
+  </div> 
+  
+  <div class="w-full sm:w-full md:w-full lg:w-1/2 flex flex-col gap-6 order-2 lg:order-2 md:order-1 sm:order-1">
+   
+      <h1 id={`nombre-${id}`} class="font-opensans font-semibold text-xl sm:text-sm md:text-base lg:text-2xl xl:text-3xl 2xl:text-5xl hover:text-[#8C52FF] cursor-pointer">{nombre}</h1>
+      <h2 class="font-opensans font-semibold text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl 2xl:text-4xl">¿Qué encontrarás en este libro?</h2>
+      <p id={`resenia-${id}`} class="font-opensans text-base text-justify sm:text-sm md:text-base lg:text-base xl:text-lg 2xl:text-3xl">{reseña}</p>
+     
+    
+
+  </div>
+
+  <div  class="w-full sm:w-full md:w-full lg:w-1/3 gap-5 flex flex-col justify-between order-1 lg:order-2 md:order-1 sm:order-1">
+    <div class="w-auto flex flex-col gap-10 ">
+      <p class="font-opensans font-semibold text-3xl  ">
+      Precio del libro
+      </p>
+      <p class="font-opensans font-semibold text-4xl text-center"  id={`precio-${id}`}>
+        {nuevoPrecio}
+      </p>
+    </div>
+    <div id={`contenedor-${libroId}`} data-id={estado} class="w-full flex flex-col justify-center items-center gap-10">
+
+    </div>
+   
+
+
+  </div>
+</div>
+  <FormLibrosUser id={id}/>
+  <FormCupon id={id}/>
+  <Cesta/>
+ 
+<script src="../script/carrito.js"></script>
+
+
+

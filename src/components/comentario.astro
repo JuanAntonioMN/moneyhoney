@@ -1,0 +1,15 @@
+---
+ const {nombre,img,comentario,red_social}=Astro.props;
+ const palabras = nombre.trim().split(/\s+/);
+ 
+---
+<div class="p-6 rounded shadow-md dark:bg-gray-50">
+    <p>{comentario}</p>
+    <div class="flex items-center mt-4 space-x-4">
+      <img src={`http://localhost:3001/uploads/images/coments/${img}`} alt={nombre} class="w-12 h-12 bg-center bg-auto rounded-full dark:bg-gray-500" />
+      <div>
+        <p class="text-lg font-semibold">{nombre}</p>
+        <a href={red_social} class="text-sm font-bold text-[#8C52FF]" target="_blank">Follow</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+---
+const {id} = Astro.props;
+---
+
+<div id={`btn-abrir-${id}`} class="hidden w-full xl:w-[80%] sm:w-full md:w-full lg:w-[80%] xl:px-10 p-0 h-scree  mx-auto fixed top-[50%] left-[50%] transform  -translate-x-1/2 -translate-y-1/2 ">
+ <div class="w-full h-screen flex justify-center items-center    ">
+   
+    <form id={`formulario-${id}`} class="w-full sm:w-full md:w-full lg:w-full xl:w-2/3 flex flex-col justify-center items-center bg-white shadow-2xl  rounded-lg relative transition-all ease-out delay-150 duration-700 ">
+        <button id={`btn-cerrar-${id}`} class=" text-[#8C52FF] absolute top-0 right-0 w-8 h-8  text-3xl font-opensans transition-all ease-out delay-150 duration-700 hover:text-4xl"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="w-full flex flex-col justify-center items-center py-5">
+            <h1 class="font-opensans font-bold text-4xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl text-center  text-[#8C52FF]">
+                ¡OBTEN EL LIBRO!
+            </h1>
+        </div>
+        <div  class="w-full flex flex-col lg:flex-row xl:flex-row justify-center items-center gap-10 p-2">
+
+            <div id={`contenedorFormulario-${id}`}  class="w-full flex flex-col justify-center items-center gap-2 p-5"> 
+                <input id={`nombreLibro-${id}`}  class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" placeholder="Nombre*"   required/>
+                <input id={`email-${id}`} class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="email" placeholder="email*"  required/>
+                <input id={`tel-${id}`} class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="tel" placeholder="Télefono*"  required/>
+            
+            </div>
+           
+            <button  class="w-full p-3 bg-[#8C52FF] text-white text-xl font-opensans rounded-lg hover:bg-black  transition-all ease-out delay-150 duration-700 uppercase">
+                obtener
+            </button>
+        </div>
+        <div class="flex justify-center items-center lg:justify-end lg:items-end  xl:justify-end xl:items-center w-full gap-2 p-3">
+            <p class="text-sm font-opensans">moneyhoney |</p>
+            <p class="text-sm font-opensans">Tel  (+52) 477 191 7386 </p> 
+        </div>
+    </form>
+
+ </div>
+
+</div>
+
+<script src="../script/carrito.js"></script>

@@ -13,9 +13,14 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.1.0",
     "@astrojs/tailwind": "^5.1.2",
+    "@stripe/stripe-js": "^5.5.0",
     "astro": "^4.16.13",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "multer": "^1.4.5-lts.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sweetalert2": "^11.15.10",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   }

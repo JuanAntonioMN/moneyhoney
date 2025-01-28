@@ -1,0 +1,89 @@
+
+
+
+  <aside class="hidden sm:flex sm:flex-col">
+    <a href="" class="inline-flex items-center justify-center h-20 w-20 bg-purple-600 hover:bg-purple-500 focus:bg-purple-500">
+      <svg fill="none" viewBox="0 0 64 64" class="h-12 w-12">
+        <title>Company logo</title>
+        <img class="w-[90%] h-auto" src="../../public/imagenes/icono.png" alt="icono">
+      </svg>
+    </a>
+    <div class="flex-grow flex flex-col justify-between text-gray-500 bg-gray-800">
+      <nav class="flex flex-col mx-4 my-6 space-y-4">
+        <a href="libros" class="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg">
+          <span class="sr-only">Libros</span>
+          <i class="fa-solid fa-book "></i>
+        </a>
+        <a href="usuarios" class="inline-flex items-center justify-center py-3 text-purple-600 bg-white rounded-lg">
+          <span class="sr-only">Usuarios</span>
+          <i class="fa-solid fa-users"></i>
+        
+        </a>
+        <a href="comentarios" class="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg">
+          <span class="sr-only">Comentarios</span>
+            <i class="fa-solid fa-comment"></i>
+              
+         
+        </a>
+
+        <a href="panel" class="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg">
+          <span class="sr-only">Ventas</span>
+          <i class="fas fa-shopping-cart"></i>
+              
+         
+        </a>
+     
+     
+      </nav>
+      <div class="inline-flex items-center justify-center h-20 w-20 border-t border-gray-700">
+        <button id="logout" class="p-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg">
+          <span class="sr-only">Cerrar sesión</span>
+          <i class="fa-solid fa-arrow-right-from-bracket" ></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+
+
+
+ 
+  
+   
+
+  
+
+   
+      <button   class="md:hidden mx-2 text-[1.8rem]  transition ease-in duration-700 delay-150 fixed top-2 right-2 z-10"  id="menu-toggle">
+        <i class="fa-solid fa-bars" id="icono"></i>
+      </button>
+  
+  <ul class="hidden color px-4 md:hidden  bg-white h-screen  w-full" id="mobile-menu" >
+      
+    <div class="flex justify-center items-center flex-col h-screen space-y-10 text-[1.5rem] font-opensans ">
+      <li><a	href="panel" >Perfil</a></li>
+        <li><a	href="libros" >Libros</a></li>
+        <li><a href="usuarios">Usuarios</a></li>
+        <li><a href="comentarios">comentarios</a></li>
+    
+        <li >
+          <button name="cerrar sesion" id="logout-movil" class="p-3">
+            <i  class="fa-solid fa-arrow-right-from-bracket"></i> Salir
+          </button>
+        </li>
+         
+    </div>
+</ul>
+
+
+
+<script>
+  
+  import '../script/menupanel.js'
+  import '../script/logout.js'
+   import '../script/protected.js'
+ 
+
+
+</script>
+

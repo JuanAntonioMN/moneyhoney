@@ -1,0 +1,17 @@
+
+---
+import PanelLayout from "../layouts/PanelLayout.astro";
+import FormLibro from "../components/formLibro.astro";
+---
+<PanelLayout title="Perfil">
+
+  <div class="w-full lg:py-6 sm:p-0">
+     <FormLibro/>
+  </div>
+
+ <script>
+   import '../script/protected.js'
+  import '../script/insertarLibros.js' 
+  </script>
+
+</PanelLayout>

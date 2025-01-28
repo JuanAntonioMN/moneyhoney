@@ -2,67 +2,62 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="flex justify-between sm:flex-row items-center   w-full px-2">
+<nav class="lg:flex sm:invisible lg:visible justify-between sm:flex-row items-center  w-full py-3 px-2 fixed bg-white top-0">
   <a href="/">
-  <div class="text-[2rem] text-center font-italiana">moneyhoney</div>
-</a>
-  <ul class="hidden md:flex space-x-6 font-opensans text-[1rem]">
+  <div class="text-[2rem] text-center font-italiana hidden lg:block">moneyhoney</div>
+  </a>
+  <ul class="flex sm:invisible md:invisible invisible lg:visible justify-center items-center space-x-6 font-opensans text-[1rem]">
     <li><a href="/" class="font-opensans">INICIO</a></li>
     <li><a href="/servicios" class="font-opensans">SERVICIOS</a></li>
     <li><a href="/ebook" class="font-opensans">EBOOKS</a></li>
-    <div class={`${currentPath === '/ebook' ? 'block ' : 'hidden'} `}>
-      <button class={`${currentPath === '/ebook' ? 'block' : 'hidden'} w-full  text-black text-[1.2rem]`}>
-        <i class="fa-solid fa-cart-shopping mx-2"></i>
-      </button>
+    <div  class={`${currentPath === '/ebook'  ? 'block ' : 'hidden'}   `}>
+      <div class="relative">
+        
+        <button id="btn-cesta-abrir" class:list={[`${currentPath === '/ebook' ? 'block' : 'hidden'} ` ," w-full  text-black text-[1.2rem]"]}>
+          <img src="/public/imagenes/ico_cesta.svg" alt="carrito" class="mx-2 p-3">
+        </button>
+        <p id="cantidad" class="text-sm font-opensans absolute top-0  z-10 right-1 rounded-full w-5 h-5 bg-black text-white text-center"></p>
+        
+      </div>
+      
+    </div>
+  </ul>
+
+</nav>
+
+<button class="sm:visible lg:invisible mx-2 text-[1.5rem] transform transition-all duration-500 hover:scale-105 z-30 fixed top-0 right-0" id="menu-toggle">
+  <i class="fa-solid fa-bars" id="icono"></i>
+</button>
+
+
+
+
+<nav class="w-full h-screen hidden bg-white color p-4  fixed z-10 top-0 transition-all ease-out delay-300 duration-500" id="mobile-menu">
+  <ul >     
+    <div class="flex justify-center items-center flex-col h-screen space-y-10 text-[1.5rem] font-opensans ">
+        <li><a	href="/" >INICIO</a></li>
+        <li><a href="/servicios">SERVICIOS</a></li>
+        <li><a href="/ebook">EBOOK</a></li>
+  
+        <div class={`${currentPath === '/ebook' ? 'block ' : 'hidden'} `}>
+          <div class="relative">
+      
+            <button id="btn-cesta-abrir" class:list={[`${currentPath === '/ebook' ? 'block' : 'hidden'} ` ," w-full  text-black text-[1.2rem]"]}>
+              <img class="w-10" src="/public/imagenes/ico_cesta.svg" alt="carrito" class="mx-2 p-3">
+            </button>
+            <p id="cantidad-movil" class="text-xl font-opensans absolute -top-3  z-10 -right-7 rounded-full w-7 h-7 bg-black text-white flex justify-center items-center"></p>
+                    
+        </div>
     </div>
   </ul>
   
   
-  
-  
-  <button class="md:hidden mx-2 text-[1.5rem] transform transition-all duration-500 hover:scale-105" id="menu-toggle">
-    <i class="fa-solid fa-bars" id="icono"></i>
-  </button>
-
 </nav>
 
 
 
 
-
-  <!-- Menú desplegable en dispositivos pequeños -->
-  <ul class="hidden   color p-4 md:hidden  h-screen  w-full " id="mobile-menu">
-      
-      <div class="flex justify-center items-center flex-col h-screen space-y-10 text-[1.5rem] font-opensans ">
-          <li><a	href="/" >INICIO</a></li>
-          <li><a href="/servicios">SERVICIOS</a></li>
-          <li><a href="/ebook">EBOOK</a></li>
-          
-          <div class={`${currentPath === '/ebook' ? 'block ' : 'hidden'} `}>
-            <button class={`${currentPath === '/ebook' ? 'block' : 'hidden'} w-full  text-black text-[1.2rem]`}>
-              <i class="fa-solid fa-cart-shopping mx-2"></i>
-            </button>
-          </div>
-      </div>
-  </ul>
-
-
 <script>
-    const menuToggle = document.getElementById("menu-toggle");
-	
-	const mobileMenu = document.getElementById("mobile-menu");
-	const icono=document.getElementById("icono");
-
-	menuToggle!.addEventListener("click", () => {
-		mobileMenu!.classList.toggle("hidden");
-		
-	if (icono!.classList.contains("fa-bars")) {
-      icono!.classList.replace("fa-bars", "fa-xmark");
-    } else {
-      icono!.classList.replace("fa-xmark", "fa-bars");
-    }
-		
-		
-	});
-
+  import '../script/menuToggle.js' 
+  import '../script/carrito.js'
 </script>

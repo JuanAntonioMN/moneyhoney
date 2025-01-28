@@ -1,74 +1,6 @@
 ---
 import PaginacionLayout from "../layouts/PaginacionLayout.astro";
-
-import { useState } from 'react';
-
 ---
-
-<script>
-    document.getElementById('proteccion')!.addEventListener('click', function () {
-     var element = document.getElementById('miElemento1');
-     if (element) { // Verifica que el elemento exista
-         if (element.style.visibility === "hidden") {
-             element.style.visibility = "visible"; // Mostrar el elemento
-         } else {
-             element.style.visibility = "hidden"; // Ocultar el elemento
-         }
-     } else {
-         console.error("El elemento 'miElemento1' no existe en el DOM.");
-     }
- });
- 
- 
-     document.getElementById('asistencia')!.addEventListener('click', function() {
-         var element = document.getElementById('miElemento2');
-         if(element){
-             if (element!.style.visibility === "hidden") {
-                 element!.style.visibility = "visible";  // Mostrar el elemento
-             } else {
-                 element!.style.visibility = "hidden";   // Ocultar el elemento
-             }
-         }
-        
-     });
- 
-     document.getElementById('muerte')!.addEventListener('click', function() {
-         var element = document.getElementById('miElemento3');
-         if(element){
-             if (element!.style.visibility === "hidden") {
-                 element!.style.visibility = "visible";  // Mostrar el elemento
-             } else {
-                 element!.style.visibility = "hidden";   // Ocultar el elemento
-             }
-         }
-     });
- 
-     document.getElementById('enfermedad')!.addEventListener('click', function() {
-         var element = document.getElementById('miElemento4');
-         if(element){
-             if (element!.style.visibility === "hidden") {
-                 element!.style.visibility = "visible";  // Mostrar el elemento
-             } else {
-                 element!.style.visibility = "hidden";   // Ocultar el elemento
-             }
-         }
-     });
- 
-     document.getElementById('devolucion')!.addEventListener('click', function() {
-         var element = document.getElementById('miElemento5');
-         if(element){
-             if (element!.style.visibility === "hidden") {
-                 element!.style.visibility = "visible";  // Mostrar el elemento
-             } else {
-                 element!.style.visibility = "hidden";   // Ocultar el elemento
-             }
-         }
-     });
- 
-    
- 
- </script>
-
 <PaginacionLayout title="Seguro de vida">
 
     <div class="w-full mt-10 sm:px-5">
@@ -101,7 +33,113 @@ import { useState } from 'react';
           
         
         </div>
-       <img class="sm:order-2" src="/imagenes/seguro_vida.svg" alt="proteger">
+       <img class="sm:order-2" src="/imagenes/seguro_vida.svg" alt="seguro de vida">
+    </div>
+
+
+
+    <div class="w-full mt-10 px-5">
+        <h2 class="text-[1.5rem] sm:text-[2rem] font-opensans text-center sm:text-left font-bold">PLAN SEGURO DE VIDA</h2>
+    </div>
+
+    <div class="w-full flex gap-2 p-5 lg:overflow-hidden overflow-x-scroll scroll-smooth scrollbar-hide ">
+
+        <div class="bg-[#8C52FF] text-white  flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around transition duration-300 ease-in-out hover:bg-black">
+
+            <div class="font-opensans  text-[1.5rem] font-bold  w-full flex ">
+                <span >Enfermedades Graves (Tiempos de espera)</span>
+                <i class="fa-solid fa-hospital"></i>
+            </div>
+
+            <div class="font-opensans font-bold  text-[1rem] w-full">
+                <p >BENEFICIOS</p>
+            </div>
+
+            <div class="w-full p-5">
+                <ul class="text-[1rem] list-disc font-opensans">
+                    <li>Infarto agudo al miocardio</li>
+                    <li>Procedimientos quirúrgicos del corazón</li>
+                    <li>Insuficiencia hepática</li>
+                    <li>Enfermedades cerebrovasculares</li>
+                    <li>Insuficiencia renal crónica</li>
+                    <li>SIDA</li>
+                    <li>Trasplante de órganos vitales</li>
+                    <li>Cáncer</li>
+                </ul>
+            </div>
+                
+           <div class="w-full h-12 flex justify-center">
+            <a href="/agendar" class="w-full flex justify-center items-center">
+                <button class="w-1/2 bg-white h-12 font-opensans font-semibold rounded-[2rem] text-black">AGENDAR CITA</button>
+
+            </a>
+           </div>
+
+           
+        </div>
+      
+
+
+        <div class="bg-[#D7B9FF] text-black flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-[#8C52FF]  hover:text-white">
+            <div class="font-opensans  text-[1.5rem] font-bold  w-full flex  justify-between ">
+                <span >Basica por fallecimiento</span>
+                <i class="fa-solid fa-church"></i>
+
+            </div>
+            <div class="font-opensans font-bold  text-[1rem] w-full">
+                <p >BENEFICIOS</p>
+            </div>
+
+            <div class="w-full p-5">
+                <ul class=" text-[1rem] list-disc font-opensans">
+                    <li>Pago anticipado por invalidez total y permanente </li>
+                    <li>Muerte accidental o pérdidas orgánicas</li>
+                  
+                </ul>
+            </div>
+                
+           <div class="w-full h-12 flex justify-center">
+            <a href="/agendar" class="w-full flex justify-center items-center">
+                <button class="w-1/2 bg-white h-12 font-opensans font-semibold rounded-[2rem] text-black">AGENDAR CITA</button>
+
+            </a>
+           </div>
+           
+        </div>
+
+
+
+        <div class="bg-black text-white flex-none w-full sm:w-1/3 rounded-[2rem] shadow-xl p-5 flex flex-col justify-around transition duration-300 ease-in-out hover:bg-[#8C52FF] hover:text-white">
+            <div class="font-opensans  text-[1.5rem] font-bold  w-full flex  justify-between ">
+                <span >Asistencias</span>
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="font-opensans font-bold  text-[1rem] w-full">
+                <p >BENEFICIOS</p>
+            </div>
+
+            <div class="w-full p-5">
+                <ul class="text-[1rem] list-disc font-opensans">
+                    <li>Asistencia Funeraria: $15,000</li>
+                    <li>Boletos para identificación de restos: $5,000</li>
+                    <li>Boletos para vuelta al lugar de origen: $5,000</li>
+                    <li>Taxi Funerario: Viajes nacionales, máx 15km ($800)</li>
+                    <li>Repatriación de restos: $100,000</li>
+                    <li>Hotel/Alojamiento: $3,500 / día, máx 3 días</li>
+                    <li>Asistencia de organización familiar: Referencias y asesoría telefónica</li>
+                 
+                </ul>
+            </div>
+                
+           <div class="w-full h-12 flex justify-center">
+            <a href="/agendar" class="w-full flex justify-center items-center">
+                <button class="w-1/2 bg-white h-12 font-opensans font-semibold rounded-[2rem] text-black">AGENDAR CITA</button>
+
+            </a>
+           </div>
+           
+        </div>
+
     </div>
 
 
@@ -265,7 +303,7 @@ import { useState } from 'react';
     <div class="w-full mt-10 p-5 flex justify-center items-center flex-col">
         <span class="text-center font-opensans font-bold text-[1rem]">Descargue información adicional </span>
        
-        <a href="https://ejemplo.com/archivo.pdf" download="mi-pdf.pdf" class="text-3xl">
+        <a href="/public/pdf/seguro_vida.pdf" download="seguro-vida.pdf" class="text-3xl">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
     </div>
@@ -347,14 +385,12 @@ import { useState } from 'react';
          
 
           
-    </div>
-
-
-    
-    
-  
+    </div>  
 
 </PaginacionLayout>
 
+<script>
+    import '../script/seguroToogle.js'
+ </script>
 
 

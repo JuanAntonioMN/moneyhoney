@@ -1,0 +1,64 @@
+---
+import FormModificarLibro from "./formModificarLibro.astro";
+import FormPrecio from "../components/formPrecio.astro"
+const { id, nombre, descripcion, precio, imagen_url,estado,cupon } = Astro.props;
+let texto;
+      if(estado){
+        texto="Poner en venta"
+      }else{
+            texto="Poner libro gratis"
+        }
+    
+
+---
+
+<div class=" flex w-full lg:flex-row  md:flex-col flex-col justify-center items-center sm:items-start px-5 sm:p-0 md:p-0 lg:px-10 gap-5" data-id=`${id}`>
+    <div   class="flex w-full lg:flex-row md:flex-col flex-col justify-center items-center sm:items-start px-5 lg:px-10 gap-5" >
+        <img class="w-full  md:w-full lg:w-[25%]" src={`http://localhost:3001/uploads/images/books/${imagen_url}`} alt={nombre} id="imagen_url" />
+        <div class="w-full flex flex-col lg:px-5 lg:gap-32 md:gap-5 gap-5">
+            <article class="flex flex-col w-full sm:gap-5 lg:order-1 md:order-2 order-2">
+                <h1 class="font-opensans font-semibold text-[1.5rem]" id="nombre">{nombre}</h1>
+                <h2 class="font-opensans font-semibold text-[1.3rem]">Reseña del libro</h2>
+                <p class="text-[1.2rem]" id="descripcion">{descripcion}</p>
+                <p class="font-opensans font-semibold text-[1.1rem]" id={`texto-${id}`}>Precio del libro: <b class="font-extralight">$ {precio}</b></p>
+                <p class="font-opensans font-semibold text-[1.1rem]" id={`mostrar-${id}`}>Cupón: <b class="font-extralight">{cupon}</b></p>
+    
+            </article>
+            <div class="w-full flex  gap-5 flex-wrap lg:order-2 md:order-1 order-1">
+                <button id={`modificar-${id}`} class="w-full lg:w-[20%] md:w-full bg-[#8C52FF] font-opensans text-white text-[1rem] rounded-[2rem] h-12 p-2 shadow-color hover:bg-[#D7B9FF] hover:text-[#8C52FF] transition-all ease-out delay-150 duration-150">
+                    <i class="fa-solid fa-pen-to-square"></i> Modificar libro
+                </button>
+
+             <button  id={`cambiar-${id}`} data-id={estado}   class="w-full lg:w-[20%] md:w-full hover:bg-[#8C52FF] bg-black font-opensans text-white text-[1rem] rounded-[2rem] h-12 p-2 hover:shadow-color transition-all ease-out delay-150 duration-150">
+                   {texto}
+                </button>
+
+
+                <button  id={`cupon-${id}`}  class="w-full lg:w-[20%] md:w-full bg-black font-opensans text-white text-[1rem] rounded-[2rem] h-12 p-2 hover:shadow-color transition-all ease-out delay-150 duration-150">
+                    <i class="fa-solid fa-receipt"></i> Generar cupón
+                </button>
+
+                <button id={`eliminar-${id}`} class="w-full lg:w-[20%] md:w-full bg-black font-opensans text-white text-[1rem] rounded-[2rem] h-12 p-2 hover:shadow-color hover:bg-[#D7B9FF] hover:text-black transition-all ease-out delay-150 duration-150">
+                    <i class="fa-solid fa-trash"></i> Eliminar libro
+                </button>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+
+<FormModificarLibro id={id}/>
+
+<FormPrecio id={id}, nombre={nombre}/>
+
+<hr class="bg-black h-[2px] w-full">
+
+<script>
+    import '../script/alert.js'
+    import '../script/eliminarLibro.js'
+    import '../script/protected.js'
+    import '../script/estadoLibro.js' 
+    import '../script/modificarLibro.js'
+    import '../script/cupon.js'
+</script>

@@ -1,0 +1,39 @@
+
+---
+import Usuario from "../components/usuario.astro";
+import PanelLayout from "../layouts/PanelLayout.astro";
+import FormUsuarios from "../components/formUsuarios.astro";
+import { fetchUsuarios } from "../script/fetchUsuarios";
+const usuarios = await fetchUsuarios();
+---
+<PanelLayout title="Administrar usuarios">
+  <div class="w-full p-8">
+   
+    <div class="w-full flex lg:justify-end justify-center md:justify-center ">
+      <a href="usuarioRegistrar"  class="w-2/3 md:w-2/3  lg:w-1/4  shadow-md p-2 rounded-lg text-center font-opensans text-white bg-[#8C52FF] sm:text-[1rem]  text-xl" id="openModal" ><i class="fa-solid fa-plus"></i> Agregar Usuarios</a>
+    </div>
+       
+ 
+    <div class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
+    {usuarios.map((usuario:any) => (
+      
+      <Usuario 
+        id={usuario.id}
+        nombre={usuario.nombre} 
+        correo={usuario.correo}
+        url_img={usuario.url_img} 
+        telefono={usuario.telefono}
+        sexo={usuario.sexo}
+        edad={usuario.edad}
+        institucion={usuario.institucion}
+        rol={usuario.rol}
+      />
+    ))}
+
+  </div>
+  </div>
+
+  <script>
+  import '../script/protected.js'
+  </script>
+</PanelLayout>

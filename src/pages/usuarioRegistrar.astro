@@ -1,0 +1,18 @@
+
+---
+import PanelLayout from "../layouts/PanelLayout.astro";
+import FormUsuarios from "../components/formUsuarios.astro";
+
+---
+<PanelLayout title="Administrar usuarios">
+      <div class="w-full h-screen lg:py-6 sm:p-0">
+            <FormUsuarios/>
+      </div>
+    
+       
+ <script>
+ // import '../script/auth.js'
+ import '../script/alert.js'
+  import '../script/insertarUsuario.js'
+ </script>
+</PanelLayout>
