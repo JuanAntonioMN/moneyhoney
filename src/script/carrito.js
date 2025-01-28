@@ -177,7 +177,7 @@ const obtenerEstadoPago = async (session_id) => {
     
     try {
       // Hacer la solicitud a la API de Stripe para obtener los detalles de la sesión
-      const response = await fetch(`http://localhost:3001/verificarPago?session_id=${session_id}`, {
+      const response = await fetch(`https://moneyhoneyb.onrender.com/verificarPago?session_id=${session_id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -195,7 +195,7 @@ const obtenerEstadoPago = async (session_id) => {
           showAlert('success', '¡Pago exitoso!', 'El pago se ha realizado correctamente');
           
           // Aquí, el frontend debería esperar el archivo ZIP
-          const downloadResponse = await fetch(`http://localhost:3001/descargarLibros?session_id=${session_id}`);
+          const downloadResponse = await fetch(`https://moneyhoneyb.onrender.com/descargarLibros?session_id=${session_id}`);
           
           // Asegurarse de que la respuesta es un archivo
           if (downloadResponse.ok) {
@@ -244,7 +244,7 @@ const obtenerEstadoPago = async (session_id) => {
 const ordenPagar = async (libros) => {
   try {
     // Crear la sesión de pago en el backend
-    const response = await fetch("http://localhost:3001/pagar", {
+    const response = await fetch("https://moneyhoneyb.onrender.com/pagar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -448,7 +448,7 @@ function gratis(){
 
 
 function LibroGratis(id, data) {
-  fetch(`http://localhost:3001/libroGratis/${id}`, {
+  fetch(`https://moneyhoneyb.onrender.com/libroGratis/${id}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -507,7 +507,7 @@ function LibroGratis(id, data) {
 
 
 function LibroCupon(id,data){
-  fetch(`http://localhost:3001/libroCupon/${id}`,{
+  fetch(`https://moneyhoneyb.onrender.com/libroCupon/${id}`,{
     method:'POST',
     headers:{
       'Content-Type':'application/json'

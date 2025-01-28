@@ -24,7 +24,7 @@ document.querySelector("form").addEventListener("submit", async (event) => {
      // Agregar la imagen al FormData
   
     try {
-      const response = await fetch("http://localhost:3001/insertarLibro", {
+      const response = await fetch("https://moneyhoneyb.onrender.com/insertarLibro", {
         method: "POST",
         body: formData, // Enviar los datos como FormData
       });

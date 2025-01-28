@@ -5,7 +5,7 @@ import { showAlert,showConfirmAlert } from "./alert.js";
  async function eliminarLibro(id) {
     const opcion=await showConfirmAlert('¿Estás seguro de que deseas eliminar este libro?', 'Esta operación no se puede deshacer.');
     if (opcion) {
-        fetch(`http://localhost:3001/eliminarLibro/${id}`, {
+        fetch(`https://moneyhoneyb.onrender.com/eliminarLibro/${id}`, {
             method: 'DELETE',
         })
         .then(response => response.json())

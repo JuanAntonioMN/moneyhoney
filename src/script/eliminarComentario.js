@@ -5,7 +5,7 @@ async  function eliminarComentario(id) {
 
    const validacion=await showConfirmAlert('¿Estás seguro de que deseas eliminar al usuario?', 'Esta operación no se puede deshacer.');
     if (validacion) {
-        fetch(`http://localhost:3001/eliminarComentario/${id}`, {
+        fetch(`https://moneyhoneyb.onrender.com/eliminarComentario/${id}`, {
             method: 'DELETE',
         })
         .then(response => response.json())

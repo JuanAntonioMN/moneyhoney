@@ -1,7 +1,7 @@
 import { showAlert } from './alert.js';
 
 function ApiModificarPrecio(id, precio, es_gratis) {
-  fetch(`http://localhost:3001/actualizarLibroPrecio/${id}`, {
+  fetch(`https://moneyhoneyb.onrender.com/actualizarLibroPrecio/${id}`, {
     method: 'PUT', // Cambiar a PATCH si es necesario
     headers: {
       'Content-Type': 'application/json',

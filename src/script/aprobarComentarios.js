@@ -3,7 +3,7 @@ import { showAlert,showConfirmAlert } from "./alert";
 async function modificarComentario(id) {
     const confirmar=await showConfirmAlert('¡Estás seguro de cambiar el estado del comentario!', 'Esta operación se puede deshacer.')
     if (confirmar) {
-        fetch(`http://localhost:3001/aprobarComentario/${id}`, {
+        fetch(`https://moneyhoneyb.onrender.com/aprobarComentario/${id}`, {
             method: 'PATCH',
         })
         .then(response => response.json())

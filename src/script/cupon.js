@@ -2,7 +2,7 @@ import { showAlert } from "./alert";
 
 async function cupon(id) {
     try {
-        const response = await fetch(`http://localhost:3001/cupon/${id}`, {
+        const response = await fetch(`https://moneyhoneyb.onrender.com/cupon/${id}`, {
             method: 'POST',
         });
 

@@ -3,7 +3,7 @@ import { showAlert, showConfirmAlert } from "./alert";
 async function eliminarUsuario(id) {
     const opcion=await showConfirmAlert('¿Estás seguro de que deseas eliminar al usuario?', 'Esta operación no se puede deshacer.');
     if (opcion) {
-        fetch(`http://localhost:3001/eliminarUsuario/${id}`, {
+        fetch(`https://moneyhoneyb.onrender.com/eliminarUsuario/${id}`, {
             method: 'DELETE',
         })
         .then(response => response.json())
