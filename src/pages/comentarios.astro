@@ -14,7 +14,7 @@ const comentarios= await fetchComentario()
 		<div class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
 
 			{comentarios.map((coment:any) => (
-			<ComentariosAdmin
+			<ComentariosAdmin client:load
 				id={coment.id}
 				nombre={coment.nombre}
 				comentario={coment.comentario}

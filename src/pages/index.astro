@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Comentario from '../components/comentario.astro';
 import FormComentario from '../components/formComentario.astro';
-import {fetchComentarios} from '../script/fetchComentarios.js'
+//import {fetchComentarios} from '../script/fetchComentarios.js'
 
-const comentarios=await fetchComentarios();
+//const comentarios=await fetchComentarios();
 const today = new Date();
 const mes = today.toLocaleString('default', { month: 'long' }); // Mes en formato largo (e.g., January)
 const anio = today.getFullYear(); // Año
@@ -171,8 +171,8 @@ const anio = today.getFullYear(); // Año
 			  </p>
 			</div>
 			<div class="p-6 xl:col-span-3">
-			  <div class="grid gap-4 md:grid-cols-2">
-				<!-- Render dinámico de los comentarios -->
+			  <div id="comentarios-container" class="grid gap-4 md:grid-cols-2">
+				<!-- Render dinámico de los comentarios 
 				{comentarios.map((coment:any) => (
 				  <Comentario
 					nombre={coment.nombre}
@@ -180,7 +180,7 @@ const anio = today.getFullYear(); // Año
 					img={coment.img}
 					red_social={coment.red_social}
 				  />
-				))}
+				))}-->
 			  </div>
 			</div>
 		  </div>
@@ -199,7 +199,8 @@ const anio = today.getFullYear(); // Año
 </Layout>
 
 <script>
-	import '../script/menuToggle.js'		
+	import '../script/menuToggle.js'	
+	import '../script/fetchComentarios.js'	
 </script>
    
    
