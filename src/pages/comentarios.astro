@@ -1,9 +1,9 @@
 ---
 import PanelLayout from "../layouts/PanelLayout.astro";
-import ComentariosAdmin from "../components/comentariosAdmin.astro";
-import { fetchComentario } from "../script/fetchComentario";
+//import ComentariosAdmin from "../components/comentariosAdmin.astro";
+//import { fetchComentario } from "../script/fetchComentario";
 
-const comentarios= await fetchComentario()
+//const comentarios= await fetchComentario()
 ---
 
 <PanelLayout title="Comentarios">
@@ -11,9 +11,9 @@ const comentarios= await fetchComentario()
 	
 	<div class="w-full p-6">
 	<h1 class="font-opensans font-bold sm:text-4xl text-2xl">Comentarios</h1>
-		<div class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
+		<div id="comentarios-admin" class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
 
-			{comentarios.map((coment:any) => (
+		<!--	{comentarios.map((coment:any) => (
 			<ComentariosAdmin 
 				id={coment.id}
 				nombre={coment.nombre}
@@ -23,13 +23,12 @@ const comentarios= await fetchComentario()
 				social={coment.red_social}
 			></ComentariosAdmin>
 				
-			))}
+			))}-->
 
 		</div>
 
 	</div>
 </PanelLayout>
 
-<script>
-	 import '../script/protected.js'
-</script>
+<script src="../script/protected.js"></script>
+<script src="../script/fetchComentarios.js"></script>

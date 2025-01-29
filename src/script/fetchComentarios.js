@@ -23,28 +23,40 @@
 
       if (response.ok) {
         const comentarios = data.comentarios;
-        const container = document.getElementById("comentarios-container");
+        const container = document.getElementById("comentarios-admin");
 
         // Limpiamos el contenedor antes de agregar nuevos comentarios
         container.innerHTML = '';
 
         comentarios.forEach((comentario) => {
           const comentarioElement = document.createElement('div');
-          comentarioElement.classList.add('p-6', 'rounded', 'shadow-md', 'dark:bg-gray-50');
+          comentarioElement.className="w-full  sm:w-full md:w-full lg:w-[45%] grid grid-rows-4 h-auto   bg-white shadow-md rounded-lg"
 
           // Creamos el contenido de cada comentario
           comentarioElement.innerHTML = `
-            <p>${comentario.comentario}</p>
-            <div class="flex items-center mt-4 space-x-4">
-              <img src="https://moneyhoneyb.onrender.com/uploads/images/coments/${comentario.img}" 
-                alt="${comentario.nombre}" class="w-12 h-12 bg-center bg-auto rounded-full dark:bg-gray-500" />
-              <div>
-                <p class="text-lg font-semibold">${comentario.nombre}</p>
-                <a href="${comentario.red_social}" class="text-sm font-bold text-[#8C52FF]" target="_blank">Follow</a>
-              </div>
-            </div>
-          `;
+          <div class="w-full flex p-3 justify-between items-center">
+              <div class="w-full px-5 py-2  flex justify-end items-end">
+                  <div class="w-full flex   flex-row gap-2   items-center">
+                      <img class="w-[2rem] h-[2rem] object-contain rounded-full" src="https://moneyhoneyb.onrender.com/uploads/images/coments/${comentario.img}" alt={nombre}>   
+                      <p class=" text-[.8rem] font-opensans">{correccionNombre.join(' ')}</p>
 
+                  </div>
+              </div>
+              <a href={social} target="_blank" class="bg-[#8C52FF]  text-white rounded h-7 px-1  text-center">Follow</a>
+          </div>
+
+          <div class="w-full p-3 ">
+            <p class="text-justify text-base">{comentario}</p>
+          </div>
+        
+          <hr class="w-full  bg-gray-300">
+
+          <div class="w-full flex sm:flex-row flex-col justify-around items-center text-[1rem] gap-2 p-2 ">
+              <button id="modificar-${comentario.id}" class="w-full sm:w-3/4 p-2  bg-white border-[1px] text-[#8C52FF] border-[#8C52FF]  rounded-[1rem] hover:bg-black hover:border-none hover:text-white transition ease-in delay-75 duration-700">{estado ? 'RETIRAR' : 'APROBAR'}</button>
+              
+              <button id="eliminar-${comentario.id}" class="w-full sm:w-3/4 p-2  border-[1px] border-[#8C52FF] rounded-[1rem] bg-[#8C52FF] hover:bg-[#D7B9FF] text-white hover:text-[#8C52FF] transition ease-in delay-75 duration-700">ELIMINAR</button>
+          </div>
+        `;
           // Agregamos el comentario al contenedor
           container.appendChild(comentarioElement);
         });
@@ -55,3 +67,6 @@
       console.error('Error al obtener los comentarios:', error);
     }
   })
+
+
+  
