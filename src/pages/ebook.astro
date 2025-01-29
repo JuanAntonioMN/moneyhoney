@@ -1,16 +1,15 @@
 ---
 import PaginacionLayout from "../layouts/PaginacionLayout.astro";
-import { fetchBooks } from '../script/fetchBooks.js'; 
-import LibroVenta from "../components/libroVenta.astro";
-
-const libros = await fetchBooks();  // Obtener los libros desde la API
+//import { fetchBooks } from '../script/fetchBooks.js'; 
+//import LibroVenta from "../components/libroVenta.astro";
+//const libros = await fetchBooks();  // Obtener los libros desde la API
 ---
 
 <PaginacionLayout title="Ebook">
 
-   <div class="flex flex-col gap-10 my-20 mx-10">
+   <div id="container-ventaLibro"  class="flex flex-col gap-10 my-20 mx-10">
 
-      {libros.map((libro:any) => (
+     <!-- {libros.map((libro:any) => (
         
         <LibroVenta 
           id={libro.id}
@@ -22,8 +21,8 @@ const libros = await fetchBooks();  // Obtener los libros desde la API
         />
 
       
-      ))}
-          
+      ))}-->
+                
      </div>
   
 </PaginacionLayout>

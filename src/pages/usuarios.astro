@@ -1,9 +1,9 @@
 
 ---
-import Usuario from "../components/usuario.astro";
+//import Usuario from "../components/usuario.astro";
 import PanelLayout from "../layouts/PanelLayout.astro";
-import { fetchUsuarios } from "../script/fetchUsuarios";
-const usuarios = await fetchUsuarios();
+//import { fetchUsuarios } from "../script/fetchUsuarios";
+//const usuarios = await fetchUsuarios();
 ---
 <PanelLayout title="Administrar usuarios">
   <div class="w-full p-8">
@@ -13,8 +13,8 @@ const usuarios = await fetchUsuarios();
     </div>
        
  
-    <div class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
-    {usuarios.map((usuario:any) => (
+    <div id="container-usuarios" class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
+    <!--{usuarios.map((usuario:any) => (
       
       <Usuario 
         id={usuario.id}
@@ -27,12 +27,11 @@ const usuarios = await fetchUsuarios();
         institucion={usuario.institucion}
         rol={usuario.rol}
       />
-    ))}
-
+    ))}-->
   </div>
   </div>
 
-  <script>
-  import '../script/protected.js'
-  </script>
+  <script src="../script/protected.js"></script>
+  <script src="../script/fetchUsuarios.js"></script>
+  
 </PanelLayout>

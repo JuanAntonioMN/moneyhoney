@@ -1,9 +1,9 @@
   
 ---
 import PanelLayout from "../layouts/PanelLayout.astro";
-import Libro from "../components/libro.astro";
-import { fetchBooks } from '../script/fetchBooks.js'; 
-const libros = await fetchBooks();  // Obtener los libros desde la API
+//import Libro from "../components/libro.astro";
+//import { fetchBooks } from '../script/fetchBooks.js'; 
+//const libros = await fetchBooks();  // Obtener los libros desde la API
 ---
 <PanelLayout title="Perfil">
 
@@ -12,9 +12,10 @@ const libros = await fetchBooks();  // Obtener los libros desde la API
       <a href="registrarLibro" class="w-2/3 md:w-2/3  lg:w-1/4  shadow-md p-2 rounded-lg text-center font-opensans text-white bg-[#8C52FF] sm:text-[1rem]  text-xl" id="openModal" ><i class="fa-solid fa-plus"></i> Agregar libro</a>
      </div>
      
-     <div class="flex flex-col gap-10 my-10">
+     <div id="container-libros" class="flex flex-col gap-10 my-10">
      
-       {libros.map((libro:any) => (
+      <!-- 
+      {libros.map((libro:any) => (
          
          <Libro 
            id={libro.id}
@@ -27,13 +28,13 @@ const libros = await fetchBooks();  // Obtener los libros desde la API
            
          />
        ))}
+      -->
     
       </div>
 
   </div>
 
   
-  <script>
-    import '../script/protected.js'
-  </script>
+  <script src="../script/protected.js"></script>
+   <script src="../script/fetchBooks.js"></script>
 </PanelLayout>
