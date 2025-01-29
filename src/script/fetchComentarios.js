@@ -18,7 +18,7 @@
 
   document.addEventListener("DOMContentLoaded", async () => {
     try {
-      const response = await fetch("https://moneyhoneyb.onrender.com/enviarComentario");
+      const response = await fetch("https://moneyhoneyb.onrender.com/comentarios");
       const data = await response.json();
 
       if (response.ok) {
