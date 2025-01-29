@@ -14,6 +14,7 @@
       return [];
     }
   };*/
+
   
 
   document.addEventListener("DOMContentLoaded", async () => {
@@ -25,12 +26,13 @@
         const comentarios = data.comentarios;
         const container = document.getElementById("comentarios-admin");
 
+        console.log(comentarios);
         // Limpiamos el contenedor antes de agregar nuevos comentarios
         container.innerHTML = '';
 
         comentarios.forEach((comentario) => {
           const comentarioElement = document.createElement('div');
-          comentarioElement.className="w-full  sm:w-full md:w-full lg:w-[45%] grid grid-rows-4 h-auto   bg-white shadow-md rounded-lg"
+          comentarioElement.className="w-full  sm:w-full md:w-full lg:w-[45%] grid grid-rows-4 h-auto   bg-white shadow-md rounded-lg";
          
           // Creamos el contenido de cada comentario
           comentarioElement.innerHTML = `
@@ -38,7 +40,7 @@
               <div class="w-full px-5 py-2  flex justify-end items-end">
                   <div class="w-full flex   flex-row gap-2   items-center">
                       <img class="w-[2rem] h-[2rem] object-contain rounded-full" src="https://moneyhoneyb.onrender.com/uploads/images/coments/${comentario.img}" alt={nombre}>   
-                      <p class=" text-[.8rem] font-opensans">{correccionNombre.join(' ')}</p>
+                      <p class=" text-[.8rem] font-opensans">${comentario.nombre}</p>
 
                   </div>
               </div>
@@ -46,7 +48,7 @@
           </div>
 
           <div class="w-full p-3 ">
-            <p class="text-justify text-base">{comentario}</p>
+            <p class="text-justify text-base">${comentario.comentario}</p>
           </div>
         
           <hr class="w-full  bg-gray-300">
@@ -67,6 +69,9 @@
       console.error('Error al obtener los comentarios:', error);
     }
   })
+
+
+
 
 
   

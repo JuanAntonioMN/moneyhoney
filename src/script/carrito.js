@@ -119,7 +119,7 @@ function mostrarCesta(){
     divItems.appendChild(divAccion);
     divAccion.className="w-1/3 flex flex-col  justify-center items-center p-5 gap-10";
     btnEliminar.className="w-12 h-12 hover:rounded-full  hover:bg-gray-200 hover:shadow-lg transition-all ease-out delay-75 duration-100 flex justify-center items-center"; 
-    imagenEliminar.src="../../public/imagenes/eliminar.svg";
+    imagenEliminar.src="/imagenes/eliminar.svg";
     imagenEliminar.alt="eliminar libro"+libro.nombre;
     imagenEliminar.className="w-1/2 object-contain";
     btnEliminar.appendChild(imagenEliminar);

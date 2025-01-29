@@ -11,24 +11,12 @@ import PanelLayout from "../layouts/PanelLayout.astro";
 	
 	<div class="w-full p-6">
 	<h1 class="font-opensans font-bold sm:text-4xl text-2xl">Comentarios</h1>
-		<div id="comentarios-admin" class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap">
-
-		<!--	{comentarios.map((coment:any) => (
-			<ComentariosAdmin 
-				id={coment.id}
-				nombre={coment.nombre}
-				comentario={coment.comentario}
-				img={coment.img}
-				estado={coment.estado_comentario}
-				social={coment.red_social}
-			></ComentariosAdmin>
-				
-			))}-->
-
-		</div>
+		<div id="comentarios-admin" class="w-full w-max-full  sm:my-10  gap-4  p-5  flex flex-wrap"></div>
 
 	</div>
 </PanelLayout>
 
 <script src="../script/protected.js"></script>
 <script src="../script/fetchComentarios.js"></script>
+<script src="../script/eliminarComentario.js"></script>
+<script src="../script/aprobarComentarios.js"></script>
