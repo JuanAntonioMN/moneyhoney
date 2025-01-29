@@ -31,7 +31,7 @@
         comentarios.forEach((comentario) => {
           const comentarioElement = document.createElement('div');
           comentarioElement.className="w-full  sm:w-full md:w-full lg:w-[45%] grid grid-rows-4 h-auto   bg-white shadow-md rounded-lg"
-
+         
           // Creamos el contenido de cada comentario
           comentarioElement.innerHTML = `
           <div class="w-full flex p-3 justify-between items-center">
@@ -52,7 +52,7 @@
           <hr class="w-full  bg-gray-300">
 
           <div class="w-full flex sm:flex-row flex-col justify-around items-center text-[1rem] gap-2 p-2 ">
-              <button id="modificar-${comentario.id}" class="w-full sm:w-3/4 p-2  bg-white border-[1px] text-[#8C52FF] border-[#8C52FF]  rounded-[1rem] hover:bg-black hover:border-none hover:text-white transition ease-in delay-75 duration-700">{estado ? 'RETIRAR' : 'APROBAR'}</button>
+              <button id="modificar-${comentario.id}" class="w-full sm:w-3/4 p-2  bg-white border-[1px] text-[#8C52FF] border-[#8C52FF]  rounded-[1rem] hover:bg-black hover:border-none hover:text-white transition ease-in delay-75 duration-700">${comentario.estado_comentario ? 'RETIRAR' : 'APROBAR'}</button>
               
               <button id="eliminar-${comentario.id}" class="w-full sm:w-3/4 p-2  border-[1px] border-[#8C52FF] rounded-[1rem] bg-[#8C52FF] hover:bg-[#D7B9FF] text-white hover:text-[#8C52FF] transition ease-in delay-75 duration-700">ELIMINAR</button>
           </div>
