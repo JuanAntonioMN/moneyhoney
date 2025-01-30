@@ -1,19 +1,23 @@
+
 import { showAlert } from "./alert";
 
 
 const stripe = Stripe('pk_test_51Qk7yqPQYVOxbV0G7via78Jfr2TITZX7tRFOBG42LnUJHPCNJPJd2BbPtZe3yJCD0qqW4MnwC2OSdvQ9tRg72F6e00Pu7n7G6D');
 
 document.addEventListener("DOMContentLoaded", function () {
+  
 
- crearBoton();
  cupon();
  gratis();
- cesta();
+
  agregarCesta();
  
- mostrarCesta();
+
 
 });
+crearBoton();
+
+
 
 
 function agregarCesta(){
@@ -161,7 +165,7 @@ function pagarCesta(){
 
 }
 
-pagarCesta();
+
 
 
 
@@ -366,7 +370,7 @@ function crearBoton(){
     const container = document.querySelector(`#contenedor-${id}`);
     const button = document.createElement("button");
     
-    if(estado=="1"){
+    if(estado===1){
       
       button.id = `gratis-${id}`;
       button.innerHTML = ' Obtener libro';

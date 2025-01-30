@@ -1,29 +1,20 @@
 ---
 import PaginacionLayout from "../layouts/PaginacionLayout.astro";
-//import { fetchBooks } from '../script/fetchBooks.js'; 
-//import LibroVenta from "../components/libroVenta.astro";
-//const libros = await fetchBooks();  // Obtener los libros desde la API
+import Cesta from "../components/cesta.astro";
 ---
 
 <PaginacionLayout title="Ebook">
 
    <div id="container-ventaLibro"  class="flex flex-col gap-10 my-20 mx-10">
 
-     <!-- {libros.map((libro:any) => (
-        
-        <LibroVenta 
-          id={libro.id}
-          nombre={libro.nombre} 
-          reseña={libro.descripcion} 
-          precio={libro.precio} 
-          imagen_url={libro.imagen_url} 
-          estado={libro.es_gratis}
-        />
-
-      
-      ))}-->
+   
                 
      </div>
+
+     <Cesta />
   
 </PaginacionLayout>
+
+<script src="../script/librosVenta.js"></script>
+
 <script src="https://js.stripe.com/v3/"></script>
