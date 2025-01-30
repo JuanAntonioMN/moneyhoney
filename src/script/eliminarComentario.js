@@ -44,13 +44,22 @@ async  function eliminarComentario(id) {
     }
 }
 
-// Agregar el event listener a los botones de eliminar
-document.addEventListener("DOMContentLoaded", function() {
+
+    
+function eliminarComentarios() {
+    
     const eliminarButtons = document.querySelectorAll('[id^="eliminar-"]');
+
+    console.log(containerEliminar);
     eliminarButtons.forEach(button => {
         const id = button.id.split('-')[1]; // Obtener el id del libro desde el id del botón
+        console.log(id);
         button.addEventListener('click', function() {
             eliminarComentario(id); // Pasar el id al método eliminarLibro
+            
         });
     });
-});
+}
+
+
+eliminarComentarios();

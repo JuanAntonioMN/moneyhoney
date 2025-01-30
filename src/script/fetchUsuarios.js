@@ -16,6 +16,8 @@
   };
   */
 
+  import { showAlert,showConfirmAlert } from "./alert";
+
   document.addEventListener("DOMContentLoaded", async () => {
     try {
       const response = await fetch("https://moneyhoneyb.onrender.com/usuarios");
@@ -36,7 +38,7 @@
           usuarioElement.innerHTML = `
            <div class="flex justify-center">
                     
-                        <img src="https://moneyhoneyb.onrender.com/uploads/images/users/${usuario.url_img}"  alt=${usuario.nombre} class="rounded-full mx-auto  w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110">
+                        <img src="https://moneyhoneyb.onrender.com/uploads/images/users/${usuario.url_img}"  alt=${usuario.nombre} class="rounded-full mx-auto  w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110 object-cover object-top">
                 </div>
                 
                 <div class="mt-2">
@@ -97,6 +99,12 @@
 
           // Agregamos el libro al contenedor
           container.appendChild(usuarioElement);
+
+
+          let btnEliminar=document.querySelector(`#eliminar-${usuario.id}`);
+          btnEliminar.addEventListener("click",()=>{
+            eliminarUsuario(usuario.id);
+          });
         });
       } else {
         console.error('Error al obtener los libros:', data.mensaje || 'Error desconocido');
@@ -105,3 +113,34 @@
       console.error('Error al obtener los libros:', error);
     }
   })  
+
+
+  async function eliminarUsuario(id) {
+      const opcion=await showConfirmAlert('¿Estás seguro de que deseas eliminar al usuario?', 'Esta operación no se puede deshacer.');
+      if (opcion) {
+          fetch(`https://moneyhoneyb.onrender.com/eliminarUsuario/${id}`, {
+              method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.mensaje === "Usuario eliminado correctamente.") {
+                
+                  showAlert('success','¡Eliminado!','Se elimino al usuario correctamente');
+  
+                  const libroDiv = document.querySelector(`[data-id="${id}"]`);
+                  if (libroDiv) libroDiv.remove();
+                  location.reload();
+              } else {
+                  showAlert('error','¡Error!','Ocurrio un error al intentar eliminar al usuario.');
+  
+              }
+          })
+          .catch(error => {
+              showAlert('error','¡Error!','Ocurrio un error al intentar eliminar al usuario.');
+          });
+      }
+      else{
+          showAlert('info','¡Informacion!','La operación se cancelo con exito.');
+  
+      }
+  }

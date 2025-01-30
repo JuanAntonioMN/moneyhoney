@@ -15,7 +15,7 @@
     }
   };*/
 
-  
+  import { showAlert,showConfirmAlert } from "./alert";
 
   document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -26,7 +26,7 @@
         const comentarios = data.comentarios;
         const container = document.getElementById("comentarios-admin");
 
-        console.log(comentarios);
+        
         // Limpiamos el contenedor antes de agregar nuevos comentarios
         container.innerHTML = '';
 
@@ -44,7 +44,7 @@
 
                   </div>
               </div>
-              <a href={social} target="_blank" class="bg-[#8C52FF]  text-white rounded h-7 px-1  text-center">Follow</a>
+              <a href=${comentario.red_social} target="_blank" class="bg-[#8C52FF]  text-white rounded h-7 px-1  text-center">Follow</a>
           </div>
 
           <div class="w-full p-3 ">
@@ -59,8 +59,24 @@
               <button id="eliminar-${comentario.id}" class="w-full sm:w-3/4 p-2  border-[1px] border-[#8C52FF] rounded-[1rem] bg-[#8C52FF] hover:bg-[#D7B9FF] text-white hover:text-[#8C52FF] transition ease-in delay-75 duration-700">ELIMINAR</button>
           </div>
         `;
+        
+
+      
           // Agregamos el comentario al contenedor
           container.appendChild(comentarioElement);
+
+          let btnEliminar=document.querySelector(`#eliminar-${comentario.id}`);
+          btnEliminar.addEventListener("click",()=>{
+            eliminarComentario(comentario.id);
+          });
+
+          let btnModificar=document.querySelector(`#modificar-${comentario.id}`);
+          btnModificar.addEventListener("click",()=>{
+            modificarComentario(comentario.id);
+          });
+
+
+
         });
       } else {
         console.error('Error al obtener los comentarios:', data.mensaje || 'Error desconocido');
@@ -70,6 +86,86 @@
     }
   })
 
+
+  async function modificarComentario(id) {
+    const confirmar=await showConfirmAlert('¡Estás seguro de cambiar el estado del comentario!', 'Esta operación se puede deshacer.')
+    if (confirmar) {
+        fetch(`https://moneyhoneyb.onrender.com/aprobarComentario/${id}`, {
+            method: 'PATCH',
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === "Estado actualizado correctamente") {
+              
+                showAlert('success','¡Estado!','Se modifico el estado del comentario.');
+                const comentario = document.querySelector(`[data-id="${id}"]`);
+                if (comentario) libroDiv.remove();
+                setTimeout(() => {
+                    location.reload();  // Recarga la página
+                  }, 1000);  
+
+            } else {
+                
+                showAlert('error','Error','Ocurrio un error al intentar cambiar el estado del comentario.');
+                setTimeout(() => {
+                    location.reload();  // Recarga la página
+                  }, 1000); 
+            }
+        })
+        .catch(error => {
+          
+           showAlert('error','Error','Ocurrio un error al intentar cambiar el estado del comentario.');
+           setTimeout(() => {
+            location.reload();  // Recarga la página
+          }, 1000); 
+        });
+    }
+  
+}
+
+
+  async  function eliminarComentario(id) {
+  
+     const validacion=await showConfirmAlert('¿Estás seguro de que deseas eliminar al usuario?', 'Esta operación no se puede deshacer.');
+      if (validacion) {
+          fetch(`https://moneyhoneyb.onrender.com/eliminarComentario/${id}`, {
+              method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.mensaje === "Comentario eliminado correctamente.") {
+                
+                  showAlert('success','Echo','Comentario eliminado correctamente."');
+  
+                  const comentario = document.querySelector(`[data-id="${id}"]`);
+                  if (comentario) libroDiv.remove();
+                  setTimeout(() => {
+                      location.reload();  // Recarga la página
+                    }, 1000); 
+              } else {
+                  showAlert('error','Error','Ocurrio un error al intentar eliminar el comentario.');
+  
+                  setTimeout(() => {
+                      location.reload();  // Recarga la página
+                    }, 1000); 
+              }
+          })
+          .catch(error => {
+              showAlert('error','Error','Ocurrio un error al intentar eliminar el comentario.');
+  
+               
+              setTimeout(() => {
+                  location.reload();  // Recarga la página
+                }, 1000); 
+          });
+      }
+      else{
+          showAlert('info','¡Informacion!','La operación se cancelo con exito.');
+          setTimeout(() => {
+              location.reload();  // Recarga la página
+            }, 1000); 
+      }
+  }
 
 
 
