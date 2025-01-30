@@ -10,9 +10,8 @@ const currentPath = Astro.url.pathname;
     <li><a href="/" class="font-opensans">INICIO</a></li>
     <li><a href="/servicios" class="font-opensans">SERVICIOS</a></li>
     <li><a href="/ebook" class="font-opensans">EBOOKS</a></li>
-    <div class={`${currentPath === '/ebook'  ? 'hidden ' : 'block'}   `}>
+    <div class={`${currentPath === '/ebook'  ? 'block ' : 'hidden'}`}>
       <div class="relative">
-        
         <button id="btn-cesta-abrir"  class=" w-full  text-black text-[1.2rem]">
           <img src="/imagenes/ico_cesta.svg" alt="carrito" class="mx-2 p-3">
         </button>
